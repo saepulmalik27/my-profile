@@ -1,0 +1,41 @@
+@import 'styles/mixins';
+.jumbotron{
+    display:flex;
+    flex-direction: row;
+    padding: 2.1rem 7.5rem 0 7.5rem;
+    @include media-max-width($initial-responsive-breakpoint) {
+        padding: 1.6rem 8vw 0 8vw;
+    }
+    @include media-max-width($mobile-breakpoint) {
+        padding: 1.2rem 8vw 0 8vw;
+    }
+ 
+
+    &_item{
+        padding : 0 2rem;
+        align-self: center;
+        flex: 1 1 50%;
+    }
+
+    .title{
+        // color: #F7931E;
+        font-weight: 700;
+    }
+
+    .subtitle{
+        background-color: cyan;
+        color : white;
+
+    }
+
+    &_illu{
+        
+        display: flex;
+        justify-content:flex-end;
+        align-items:flex-end;
+
+        &>img{
+            border-radius : 50%;
+        }
+    }
+}

@@ -1,0 +1,61 @@
+@import 'styles/colors';
+@import 'styles/mixins';
+
+.container {
+    position: relative;
+    z-index: 1;
+ 
+    &_bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $primary;
+        content: '';
+        height: 32rem;
+        width: 100%;
+        z-index: -2;
+    }
+    &_fg {
+        position: relative;
+        background-color: transparent;
+        width: inherit;
+        height: inherit;
+        color: #fff;
+        z-index: -1;
+        // background-image: url(../../../../public/fg.png);
+        background-position: center center;
+        // background-repeat: no-repeat;
+        background-size: cover;
+
+        @include media-max-width($mobile-breakpoint) {
+            // background-image: url(../../../../public/mobile_version.png);
+        }
+
+        &_icon1 {
+            position: absolute;
+            top: 50%;
+            left: -6%;
+            transform: translate(0%, -50%);
+        }
+
+        &_icon2 {
+            position: absolute;
+            top: 10%;
+            right: 0%;
+            transform: translate(-10%, 0%);
+        }
+
+        &_icon3 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &_icon4 {
+            position: absolute;
+            bottom: -5%;
+            right: -2%;
+        }
+    }
+}

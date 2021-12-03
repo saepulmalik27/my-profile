@@ -1,0 +1,109 @@
+@import 'styles/colors';
+h1,
+.h1 {
+    font-size: 2.5rem;
+}
+
+h2,
+.h2 {
+    font-size: 2rem;
+}
+
+h3,
+.h3 {
+    font-size: 1.625rem;
+}
+
+h4,
+.h4 {
+    font-size: 1.325rem;
+}
+
+h5,
+.h5 {
+    font-size: 1.25rem;
+}
+
+h6,
+.h6 {
+    font-size: 1rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+.h0{
+    font-size: 3.75rem;
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 480px) {
+    html {
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 992px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.p00{
+    font-size: 1.5rem;
+}
+
+.p0 {
+    font-size: 1.25rem;
+}
+.p1 {
+    font-size: 1rem;
+}
+.p2 {
+    font-size: 0.8125rem;
+}
+.p3 {
+    font-size: 0.6875rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,.h2,.h3,.h4,.h5,.h6,
+p,
+.p0,
+.p1,
+.p2,
+.p3 {
+    line-height: 150%;
+}
+
+
+.text-primary{
+    color:  $primary;
+}
+
+.text-secondary{
+    color: $text-secondary;
+}

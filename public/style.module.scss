@@ -1,0 +1,21 @@
+@import 'styles/mixins';
+@import 'styles/colors';
+.section {
+    position: relative;
+    &_container {
+        position: relative;
+        @include global-gap();
+    }
+
+    &_primary {
+        background-color: $primary;
+        color: white;
+    }
+
+    &_decoration {
+        position: absolute;
+        width: 100%;
+        z-index: 996;
+        background-color: transparent;
+    }
+}
