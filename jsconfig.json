@@ -1,7 +1,0 @@
-{
-    "compilerOptions": {
-        "jsx": "react",
-        "baseUrl": "./",
-    },
-    "exclude": ["node_modules"]
-}
