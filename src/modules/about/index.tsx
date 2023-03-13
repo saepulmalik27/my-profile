@@ -22,7 +22,7 @@ const AboutPage = () => {
           </h1>
           <p className="indent-10 text-justify animate-writting text-lg leading-9 hidden sm:block">
             Saya Saepul Malik, seorang Web Developer yang memiliki latar
-            belakang pendidikan <strong>S1 Fisika</strong> dari
+            belakang pendidikan <strong>S1</strong> dari &nbsp;
             <strong>Institut Pertanian Bogor</strong>.
           </p>
         </div>
