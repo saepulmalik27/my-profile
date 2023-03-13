@@ -15,6 +15,6 @@
         @apply flex-col;
         @apply flex-1;
         @apply items-center;
-        @apply font-mono;
+        @apply font-sans;
     }
   }

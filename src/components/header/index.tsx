@@ -6,6 +6,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import SelectList from "../select-list";
 import { Dialog } from "@headlessui/react";
 import HelperButton from "../helper-button";
+import { useRouter } from "next/router";
 
 const Header = () => {
     const [showMobileMenu, setShowMobileMenu] = useState(false)
@@ -14,10 +15,16 @@ const Header = () => {
         setShowMobileMenu(!showMobileMenu)
     }, [showMobileMenu])
 
+    const router = useRouter()
+
+    const handleClickLogo = () => {
+        router.push('/')
+    }
+
   return (
     <header className="sticky top-0 left-0 shadow-md flex justify-between items-center gap-2 px-1 py-2  sm:py-1 max-w-7xl w-full bg-white dark:bg-gray-600">
       
-      <div className="flex gap-1 items-center">
+      <div className="flex gap-1 items-center cursor-pointer" onClick={handleClickLogo}>
       <Image
         src={"/logo.png"}
         alt="logo"
