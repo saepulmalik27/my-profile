@@ -22,7 +22,7 @@ const Header = () => {
     }
 
   return (
-    <header className="sticky top-0 left-0 shadow-md flex justify-between items-center gap-2 px-1 py-2  sm:py-1 max-w-7xl w-full bg-white dark:bg-gray-600">
+    <header className="sticky top-0 left-0 flex justify-between items-center gap-2 px-1 py-2  sm:py-1 max-w-7xl w-full bg-white dark:bg-gray-800">
       
       <div className="flex gap-1 items-center cursor-pointer" onClick={handleClickLogo}>
       <Image

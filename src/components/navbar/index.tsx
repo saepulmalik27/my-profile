@@ -4,12 +4,8 @@ import Link from "next/link";
 const Navbar = () => {
   const lists = [
     { label: "about", url: "/about" },
-    { label: "carreer", url: "/carreer" },
+    { label: "Pengalaman Kerja", url: "/carreer" },
     { label: "blog", url: "/blog" },
-    {
-      label: "contact",
-      url: "/contact",
-    },
   ];
 
   return (
