@@ -18,11 +18,11 @@ const AboutPage = () => {
         </div>
         <div className="flex-1  flex flex-col gap-5">
           <h1 className="text-3xl text-transparent bg-clip-text bg-gradient-to-r from-gray-500 to-cyan-800 font-extrabold flex-1">
-            I'm a Web Developer
+            I&apos;m a Web Developer
           </h1>
           <p className="indent-10 text-justify animate-writting text-lg leading-9 hidden sm:block">
             Saya Saepul Malik, seorang Web Developer yang memiliki latar
-            belakang pendidikan <strong>S1 Fisika</strong> dari{" "}
+            belakang pendidikan <strong>S1 Fisika</strong> dari
             <strong>Institut Pertanian Bogor</strong>.
           </p>
         </div>
