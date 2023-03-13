@@ -1,4 +1,5 @@
 import Layout from '@/hoc/layouts'
+import BlogPage from '@/modules/blog'
 
 import Head from 'next/head'
 
@@ -14,7 +15,7 @@ export default function Blog() {
       </Head>
       
       <Layout>
-       my blog
+       <BlogPage/>
       </Layout>
      
     </>
