@@ -15,6 +15,7 @@ export default function Home() {
       </Head>
       
       <Layout>
+        <p>Ini test amplify</p>
        <HomeView/>
       </Layout>
      
