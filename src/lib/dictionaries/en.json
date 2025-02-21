@@ -1,0 +1,61 @@
+{
+  "hero": {
+    "title": "Saepul Malik",
+    "subtitle": "Building Scalable & Engaging Web Experiences",
+    "description": "Hi, I’m Saepul Malik, a Frontend Engineer specializing in React, Next.js, and modern web technologies. Passionate about crafting high-performance and visually appealing web applications"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I’m a Frontend Engineer with 5+ years of experience in web development, currently working at PT Inspigo Inovasi Indonesia. My journey started in full-stack development, but I quickly found my passion in frontend technologies. I specialize in React, Next.js, and modern UI frameworks like Tailwind CSS and ShadCN/UI, focusing on building dynamic, scalable, and accessible user interfaces."
+  },
+  "skills": {
+    "frontend": ["React.js", "Next.js", "Gatsby.js", "Vue.js"],
+    "state_management": ["Redux", "Redux Toolkit", "Zustand"],
+    "styling": ["Tailwind CSS", "Styled Components", "Sass", "Shadcn UI"],
+    "api_and_data_fetching": [
+      "Axios",
+      "React Query",
+      "RTK Query",
+      "SWR",
+      "GraphQL"
+    ],
+    "backend": ["Laravel", "Supabase"],
+    "databases": ["PostgreSQL", "MySQL", "MongoDB", "Firebase", "Prisma ORM"],
+    "authentication": ["NextAuth.js", "OAuth", "JWT"],
+    "testing_and_documentation": ["Jest", "Storybook", "React Testing Library"],
+    "devops_and_deployment": ["Vercel", "Docker", "CI/CD", "GitHub Actions"],
+    "version_control": ["Git", "GitHub", "Git Flow"],
+    "tools_and_utilities": ["ESLint", "Prettier", "Webpack", "Bun", "Vitest"]
+  },
+  "experience": [
+    {
+      "title": "Frontend Engineer | PT Inspigo Inovasi Indonesia (2021 - Present)",
+      "responsibilities": [
+        "Built and maintained high-performance web applications using Next.js and React.",
+        "Implemented state management solutions (Redux, Zustand, RTK Query) for better UI performance.",
+        "Created customizable learning platforms for enterprise clients with dynamic UI adjustments.",
+        "Integrated AI-powered features using OpenAI SDK and RAG for personalized learning experiences."
+      ]
+    },
+    {
+      "title": "Full Stack Developer | PT Praweda Sarana Informatika (Outsourced by PT Indocyber) (2018 - 2021)",
+      "responsibilities": [
+        "Developed web applications using PHP (Laravel, CodeIgniter, CakePHP) and Vue.js.",
+        "Built a Shipyard Project Management System handling end-to-end workflow.",
+        "Maintained and improved a Trucking Management Application with GPS tracking and analytics."
+      ]
+    },
+    {
+      "title": "Full Stack Developer Trainee | PT Indocyber Global Technology (2018)",
+      "responsibilities": [
+        "Trained in C#, Java, SQL Server, Java Spring, and MVC frameworks.",
+        "Built a Library Management System as a final project."
+      ]
+    }
+  ],
+  "contact" : {
+    "email" : "saepulalmalik@gmail.com",
+    "linkedin" : "https://www.linkedin.com/in/saepulmalik27/",
+    "github" : "https://github.com/saepulmalik27"
+  }
+}
