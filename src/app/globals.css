@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-100:#1A237E;
+  --primary-200:#534bae;
+  --primary-300:#b8a6ff;
+  --accent-100:#536DFE;
+  --accent-200:#ffffff;
+  --text-100:#FFFFFF;
+  --text-200:#e0e0e0;
+  --bg-100:#0F0C3F;
+  --bg-200:#221b50;
+  --bg-300:#3c326a;
+    
+}
+
+
+@layer base {
+  :root {
+    --radius:0.5rem;
+  }
+}
