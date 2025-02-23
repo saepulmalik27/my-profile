@@ -12,6 +12,9 @@ export const useData = () => {
               "Created customizable learning platforms for enterprise clients with dynamic UI adjustments.",
               "Integrated AI-powered features using OpenAI SDK and RAG for personalized learning experiences.",
             ],
+            stacks : [
+              'ReactJs', 'Nexjs', 'GatsbyJs', 'Tailwind CSS', 'Shadcn UI', 'Websocket', 'Typescript'
+            ]
           },
           {
             title:
@@ -21,6 +24,7 @@ export const useData = () => {
               "Built a Shipyard Project Management System handling end-to-end workflow.",
               "Maintained and improved a Trucking Management Application with GPS tracking and analytics.",
             ],
+            stacks : ['PHP', 'laravel', 'CI', 'VueJs']
           },
           {
             title:
@@ -29,6 +33,7 @@ export const useData = () => {
               "Trained in C#, Java, SQL Server, Java Spring, and MVC frameworks.",
               "Built a Library Management System as a final project.",
             ],
+            stacks : ['#C', 'Java', 'SQL server', 'Javascript']
           },
         ]
       

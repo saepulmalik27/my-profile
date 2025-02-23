@@ -6,7 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Fragment } from "react";
-import { Ampersand } from "lucide-react";
+import { Ampersand, Terminal } from "lucide-react";
 import DevCode from "@/components/asset/code";
 import Image from "next/image";
 import { useData } from "@/hooks/useData";
@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <Fragment>
       <header className="px-20 py-5 sticky z-10 inset-0  bg-background-100 shadow flex justify-between">
-        <div> 
+        <div>
           <Image
             src={"/assets/logo/logo.png"}
             width={40}
@@ -149,23 +149,36 @@ export default function Home() {
           </Card>
         </section>
         <section id="experience">
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-4xl">Experience</CardTitle>
-          </CardHeader>
-          <CardContent>
-            {experience.reverse().map(({ responsibilities, title }, key) => (
-              <Card key={key}>
-                <CardHeader>
-                  <CardTitle>{title}</CardTitle>
-                  <CardContent>{responsibilities}</CardContent>
-                </CardHeader>
-              </Card>
-            ))}
-          </CardContent>
-        </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-4xl">Experience</CardTitle>
+            </CardHeader>
+            <CardContent>
+              {experience.map(({ responsibilities, title, stacks }, key) => (
+                <Card key={key}>
+                  <CardHeader>
+                    <CardTitle>{title}</CardTitle>
+                    <CardContent className="p-0 space-y-5" >
+                      <ul className="list-none space-y-2">
+                        {responsibilities.map((value, key) => (
+                          <li key={key} className="inline-flex gap-3"><Terminal className="text-accent-100" />{value}</li>
+                        ))}
+                      </ul>
+                      <div className="flex gap-2 flex-wrap">
+                        {
+                          stacks.map((stack, key) => (
+                            <div key={key} className="rounded-full bg-background-300 py-2 px-4">{stack}</div>
+                          ))
+                        }
+                      </div>
+                    </CardContent>
+                  </CardHeader>
+                </Card>
+              ))}
+            </CardContent>
+          </Card>
         </section>
-        
+
       </main>
       <footer className="flex justify-center items-center">
         Build by Saepul Malik 2025
