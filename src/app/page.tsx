@@ -43,7 +43,11 @@ export default function Home() {
             ))}
           </ul>
           <ThemeToggle />
-          <Button>Resume</Button>
+          <Button asChild>
+            <a href="https://drive.google.com/uc?export=download&id=1h5gT2ORJ97Y0hVW0chI0k2PnAgj1qDVJ" target="_blank" rel="noopener noreferrer">
+              Resume
+            </a>
+          </Button>
         </nav>
       </header>
       <aside className="fixed z-10 bottom-0 left-0 w-fit" id="left" >
