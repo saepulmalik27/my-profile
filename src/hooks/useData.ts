@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, X } from "@/components/ui/brand-icons";
 
 export const useData = () => {
     const experience = 
@@ -102,7 +102,7 @@ export const useData = () => {
         logo : Linkedin,
         link : "https://linkedin.com/in/saepulalmalik"
       }, {
-        logo : Twitter,
+        logo : X,
         link : "https://twitter.com/saepulalmalik"
       }]
 

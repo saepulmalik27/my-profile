@@ -1,6 +1,8 @@
-import React from "react";
+import { type ComponentProps } from "react";
 
-const DevCode = ({className, ...props} : React.HTMLAttributes<HTMLDivElement>) => {
+interface DevCodeProps extends ComponentProps<"div"> {}
+
+function DevCode({ className, ...props }: DevCodeProps) {
   return (
     <div className={className} {...props}>
       <svg
@@ -87,8 +89,8 @@ const DevCode = ({className, ...props} : React.HTMLAttributes<HTMLDivElement>) =
             transform="translate(810.5 644.531)"
             fill="none"
             stroke="#d0cde1"
-            stroke-miterlimit="10"
-            stroke-width="2"
+            strokeMiterlimit="10"
+            strokeWidth="2"
           />
           <circle
             id="Ellipse_514"
@@ -405,6 +407,6 @@ const DevCode = ({className, ...props} : React.HTMLAttributes<HTMLDivElement>) =
       </svg>
     </div>
   );
-};
+}
 
 export default DevCode;

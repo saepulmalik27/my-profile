@@ -1,24 +1,125 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  --primary-100:#1A237E;
-  --primary-200:#534bae;
-  --primary-300:#b8a6ff;
-  --accent-100:#536DFE;
-  --accent-200:#ffffff;
-  --text-100:#FFFFFF;
-  --text-200:#e0e0e0;
-  --bg-100:#0F0C3F;
-  --bg-200:#221b50;
-  --bg-300:#3c326a;
-    
+@theme {
+  --color-primary-100: var(--primary-100);
+  --color-primary-200: var(--primary-200);
+  --color-primary-300: var(--primary-300);
+  --color-accent-100: var(--accent-100);
+  --color-accent-200: var(--accent-200);
+  --color-secondary-100: var(--text-100);
+  --color-secondary-200: var(--text-200);
+  --color-background-100: var(--bg-100);
+  --color-background-200: var(--bg-200);
+  --color-background-300: var(--bg-300);
+  
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
 }
 
+:root {
+  --primary-100: #1A237E;
+  --primary-200: #534bae;
+  --primary-300: #b8a6ff;
+  --accent-100: #536DFE;
+  --accent-200: #ffffff;
+  --text-100: #FFFFFF;
+  --text-200: #e0e0e0;
+  --bg-100: #0F0C3F;
+  --bg-200: #221b50;
+  --bg-300: #3c326a;
+  --radius: 0.5rem;
+}
 
-@layer base {
-  :root {
-    --radius:0.5rem;
-  }
+/* Light theme overrides */
+.light {
+  --primary-100: #e8eaf6;
+  --primary-200: #7986cb;
+  --primary-300: #3949ab;
+  --accent-100: #3d5afe;
+  --accent-200: #1a1a2e;
+  --text-100: #1a1a2e;
+  --text-200: #4a4a6a;
+  --bg-100: #f5f7ff;
+  --bg-200: #e8ecf8;
+  --bg-300: #d0d5ec;
+}
+
+/* Smooth color transition when switching themes — scoped to avoid conflicting with animations */
+body,
+header,
+main,
+footer,
+aside,
+section,
+nav,
+.bg-background-100,
+.bg-background-200,
+.bg-background-300 {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Lenis smooth scrolling styles */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Ensure sections have spacing when scrolled to via ID */
+[id] {
+  scroll-margin-top: 100px;
+}
+
+/* ===== Animated Navigation Link Hover Effect ===== */
+.nav-link {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding-bottom: 4px;
+  color: var(--text-100);
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Sliding underline — expands from center on hover */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-100);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Text glow + lift on hover */
+.nav-link:hover {
+  color: var(--accent-100);
+  transform: translateY(-2px);
+  text-shadow: 0 0 8px rgba(83, 109, 254, 0.3);
 }

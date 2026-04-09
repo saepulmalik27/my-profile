@@ -12,6 +12,7 @@ import Image from "next/image";
 import { useData } from "@/hooks/useData";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 export default function Home() {
   const { skillStack, experience, navigation, social } = useData();
@@ -29,16 +30,19 @@ export default function Home() {
         </div>
 
         <nav className="flex gap-5 items-center">
-          <ul className="flex flex-row gap-5">
+          <ul className="flex flex-row gap-8">
             {navigation.map((data, key) => (
-              <li key={key} className="cursor-pointer select-none hover:scale-y-110 hover:translate-y-2">
-                <Link href={data.link}>
-                  <span className="text-accent-100 italic">#{key + 1}</span>{" "}
+              <li key={key}>
+                <Link href={data.link} className="nav-link group relative py-2 cursor-pointer select-none">
+                  <span className="text-accent-100 italic text-sm mr-1 transition-all duration-300 group-hover:drop-shadow-[0_0_6px_rgba(83,109,254,0.6)]">
+                    #{key + 1}
+                  </span>
                   {data.label}
                 </Link>
               </li>
             ))}
           </ul>
+          <ThemeToggle />
           <Button>Resume</Button>
         </nav>
       </header>
@@ -52,7 +56,7 @@ export default function Home() {
                 </div>
               </Link>
             ))}
-            <div className="w-[1px] h-24 bg-white"></div>
+            <div className="w-[1px] h-24 bg-secondary-100"></div>
           </div>
         </div>
       </aside>
@@ -64,7 +68,7 @@ export default function Home() {
           >
             saepulalmalik@gmail.com
           </Link>
-          <div className="w-[1px] h-24 bg-white"></div>
+          <div className="w-[1px] h-24 bg-secondary-100"></div>
         </div>
       </aside>
       <main className="flex flex-col max-w-7xl m-auto p-10 gap-40 ">
@@ -178,7 +182,15 @@ export default function Home() {
             </CardContent>
           </Card>
         </section>
-
+        <section id="contact" className="py-20 flex flex-col items-center gap-10">
+          <h1 className="text-4xl font-bold">Get In Touch</h1>
+          <p className="text-xl text-secondary-200 max-w-2xl text-center">
+            I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+          </p>
+          <Button asChild size="lg">
+            <Link href="mailto:saepulalmalik@gmail.com">Say Hello</Link>
+          </Button>
+        </section>
       </main>
       <footer className="flex justify-center items-center">
         Build by Saepul Malik 2025
