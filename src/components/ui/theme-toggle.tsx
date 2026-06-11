@@ -35,7 +35,7 @@ export function ThemeToggle() {
         overflow-hidden
         cursor-pointer
         hover:border-accent-100
-        hover:shadow-[0_0_12px_rgba(83,109,254,0.4)]
+        hover:shadow-[0_0_12px_rgba(var(--accent-100-rgb),0.4)]
         transition-all duration-300 ease-in-out
         group
       "

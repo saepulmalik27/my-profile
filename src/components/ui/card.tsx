@@ -9,7 +9,10 @@ type CardProps = React.HTMLAttributes<HTMLDivElement> & {
 const Card = ({ className, ref, ...props }: CardProps) => (
   <div
     ref={ref}
-    className={cn("rounded-xl  shadow", className)}
+    className={cn(
+      "rounded-2xl border border-background-300 bg-background-200/50 backdrop-blur-md shadow-sm transition-all duration-500 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)]",
+      className
+    )}
     {...props}
   />
 );

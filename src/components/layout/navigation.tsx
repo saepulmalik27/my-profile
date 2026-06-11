@@ -12,7 +12,7 @@ export function Navigation() {
         {navigation.map((data, key) => (
           <li key={key}>
             <Link href={data.link} className="nav-link group relative py-2 cursor-pointer select-none">
-              <span className="text-accent-100 italic text-sm mr-1 transition-all duration-300 group-hover:drop-shadow-[0_0_6px_rgba(83,109,254,0.6)]">
+              <span className="text-accent-100 italic text-sm mr-1 transition-all duration-300 group-hover:drop-shadow-[0_0_6px_rgba(var(--accent-100-rgb),0.6)]">
                 #{key + 1}
               </span>
               {data.label}

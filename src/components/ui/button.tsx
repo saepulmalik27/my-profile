@@ -9,15 +9,15 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "text-text-100 border-accent-100 border hover:bg-accent-100",
+        default: "text-secondary-100 border-accent-100 border bg-transparent hover:bg-accent-100 hover:text-accent-200 transition-all duration-300 shadow-[0_4px_12px_rgba(var(--accent-100-rgb),0.1)] hover:shadow-[0_4px_16px_rgba(var(--accent-100-rgb),0.25)] hover:-translate-y-0.5 cursor-pointer",
         destructive:
-          "bg-red-500 text-neutral-50 hover:bg-red-500/90 dark:bg-red-900 dark:text-neutral-50 dark:hover:bg-red-900/90",
+          "bg-red-500 text-neutral-50 hover:bg-red-500/90 dark:bg-red-900 dark:text-neutral-50 dark:hover:bg-red-900/90 cursor-pointer",
         outline:
-          "border border-neutral-200 bg-white hover:bg-neutral-100 hover:text-neutral-900 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-800 dark:hover:text-neutral-50",
+          "border border-background-300 bg-transparent text-secondary-100 hover:bg-background-200 hover:text-accent-100 transition-all duration-300 hover:-translate-y-0.5 cursor-pointer",
         secondary:
-          "bg-neutral-100 text-neutral-900 hover:bg-neutral-100/80 dark:bg-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-800/80",
-        ghost: "hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50",
-        link: "text-neutral-900 underline-offset-4 hover:underline dark:text-neutral-50",
+          "bg-background-300 text-secondary-100 hover:bg-background-300/80 transition-all cursor-pointer",
+        ghost: "hover:bg-background-200 hover:text-accent-100 transition-all cursor-pointer",
+        link: "text-accent-100 underline-offset-4 hover:underline cursor-pointer",
       },
       size: {
         default: "h-10 px-4 py-2",

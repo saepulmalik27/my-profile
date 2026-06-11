@@ -5,81 +5,78 @@ export const useData = () => {
         [
           {
             title:
-              "Frontend Engineer | PT Inspigo Inovasi Indonesia (2021 - Present)",
+              "Frontend Web Engineer | PT Inspigo Inovasi Indonesia (2021 - Present)",
             responsibilities: [
-              "Built and maintained high-performance web applications using Next.js and React.",
-              "Implemented state management solutions (Redux, Zustand, RTK Query) for better UI performance.",
-              "Created customizable learning platforms for enterprise clients with dynamic UI adjustments.",
-              "Integrated AI-powered features using OpenAI SDK and RAG for personalized learning experiences.",
+              "Built and maintained high-performance web applications using Next.js and React, following standard Next.js workflows to ensure robustness and easy maintenance.",
+              "Maintained and scaled an app-wide design system of components, ensuring UI consistency, accessibility, and high performance across all products.",
+              "Collaborated seamlessly with cross-functional teams, including Product, Backend Developers, UI Designers, and QA teams, to deliver sophisticated designs and quality products.",
+              "Implemented unit and integration tests using Jest and React Testing Library to deliver secure, scalable, and well-tested features.",
+              "Challenged technical boundaries by exploring emerging technologies like Tauri & Rust to continuously expand the team's capabilities.",
             ],
             stacks : [
-              'ReactJs', 'Nexjs', 'GatsbyJs', 'Tailwind CSS', 'Shadcn UI', 'Websocket', 'Typescript'
+              'React.js', 'Next.js', 'TypeScript', 'Jest', 'Storybook', 'Tailwind CSS', 'Shadcn UI', 'Websocket'
             ]
           },
           {
             title:
-              "Full Stack Developer | PT Praweda Sarana Informatika (Outsourced by PT Indocyber) (2018 - 2021)",
+              "Full-Stack Developer | PT Praweda Sarana Informatika (Outsourced by PT Indocyber) (2018 - 2021)",
             responsibilities: [
-              "Developed web applications using PHP (Laravel, CodeIgniter, CakePHP) and Vue.js.",
-              "Built a Shipyard Project Management System handling end-to-end workflow.",
-              "Maintained and improved a Trucking Management Application with GPS tracking and analytics.",
+              "Developed maintainable, secure, and scalable web applications using PHP (Laravel) and Vue.js, coordinating across different layers of the infrastructure.",
+              "Created and structured reusable UI components, documenting them with Storybook to foster team collaboration and speed up feature deployment.",
+              "Used Git version control workflows (Git Flow) for code reviews, ensuring codebase integrity and alignment with team best practices.",
             ],
-            stacks : ['PHP', 'laravel', 'CI', 'VueJs']
+            stacks : ['PHP', 'Laravel', 'Vue.js', 'SQL Server', 'Git']
           },
           {
             title:
-              "Full Stack Developer Trainee | PT Indocyber Global Technology (2018)",
+              "Full-Stack Developer Trainee | PT Indocyber Global Technology (2018)",
             responsibilities: [
-              "Trained in C#, Java, SQL Server, Java Spring, and MVC frameworks.",
-              "Built a Library Management System as a final project.",
+              "Strengthened rock-solid fundamentals in JavaScript, TypeScript, C#, and Java Spring, demonstrating proficiency in OOP and database optimization.",
+              "Built a Library Management System as a final project to showcase web interactivity and database design.",
             ],
-            stacks : ['#C', 'Java', 'SQL server', 'Javascript']
+            stacks : ['JavaScript', 'TypeScript', 'C#', 'Java', 'SQL Server']
           },
         ]
       
       const skills = [
         {
           category: "Frontend",
-          items: ["React.js", "Next.js", "Gatsby.js", "Vue.js"],
+          items: ["Next.js", "React.js", "TypeScript", "ES6+ JavaScript"],
         },
-        { category: "State Management", items: ["Redux", "RTK Query", "Zustand"] },
+        { category: "State Management", items: ["Zustand", "Redux Toolkit", "RTK Query"] },
         {
-          category: "Styling",
-          items: ["Tailwind CSS", "Styled Components", "Sass", "Shadcn UI"],
+          category: "Styling & Design System",
+          items: ["Tailwind CSS", "Shadcn UI", "Storybook", "Styled Components"],
         },
         {
           category: "API & Data Fetching",
-          items: ["Axios", "React Query", "RTK Query", "SWR", "GraphQL"],
+          items: ["GraphQL", "REST APIs", "RTK Query", "React Query"],
         },
         {
-          category: "Backend",
-          items: ["Node.js", "Laravel"],
+          category: "Backend & Systems",
+          items: ["Node.js", "Rust", "Laravel", "PHP"],
+        },
+        {
+          category: "Desktop Apps",
+          items: ["Tauri", "Electron"],
         },
         {
           category: "Databases",
           items: ["PostgreSQL", "MySQL", "Firebase"],
         },
         {
-          category: "Authentication",
-          items: ["NextAuth.js", "OAuth", "JWT"],
-        },
-        {
-          category: "Testing & Documentation",
-          items: ["Jest", "Storybook", "React Testing Library"],
+          category: "Testing Frameworks",
+          items: ["Jest", "React Testing Library", "Vitest"],
         },
         {
           category: "DevOps & Deployment",
-          items: ["Vercel", "Netlify", "Docker", "CI/CD"],
+          items: ["Vercel", "Docker", "CI/CD (GitHub Actions)"],
         },
-        { category: "Version Control", items: ["Git", "GitHub", "Git Flow"] },
-        {
-          category: "Tools & Utilities",
-          items: ["ESLint", "Prettier", "Webpack", "Bun", "Vitest"],
-        },
+        { category: "Version Control & Tools", items: ["Git (Git Flow)", "GitHub", "ESLint", "Prettier"] },
       ];
       
-      const skill1 = skills.slice(0, 6);
-      const skill2 = skills.slice(6);
+      const skill1 = skills.slice(0, 5);
+      const skill2 = skills.slice(5);
       const skillStack = [skill1, skill2];
 
       const navigation = [

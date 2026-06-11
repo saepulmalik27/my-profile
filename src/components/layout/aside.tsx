@@ -6,11 +6,11 @@ export function Aside() {
       <div className="flex w-[150px] flex-col items-center gap-5 justify-center">
         <Link
           href={"mailto:saepulalmalik@gmail.com"}
-          className="[writing-mode:vertical-lr] hover:text-accent-100 hover:translate-y-1"
+          className="[writing-mode:vertical-lr] hover:text-accent-100 hover:translate-y-1 transition-all duration-300"
         >
           saepulalmalik@gmail.com
         </Link>
-        <div className="w-px h-24 bg-secondary-100"></div>
+        <div className="w-px h-24 bg-secondary-100 transition-colors duration-300"></div>
       </div>
     </aside>
   );

@@ -15,7 +15,7 @@ export function Sidebar() {
               </div>
             </Link>
           ))}
-          <div className="w-px h-24 bg-secondary-100"></div>
+          <div className="w-px h-24 bg-secondary-100 transition-colors duration-300"></div>
         </div>
       </div>
     </aside>
