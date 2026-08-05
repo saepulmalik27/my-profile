@@ -6,7 +6,7 @@
 
 **Status:** ready-for-agent
 
-- [ ] Configure Tailwind CSS in `packages/ui`.
-- [ ] Initialize Shadcn UI in `packages/ui`.
-- [ ] Export a basic Button component.
-- [ ] Import and render the Button in `apps/portfolio`.
+- [x] Configure Tailwind CSS in `packages/ui`.
+- [x] Initialize Shadcn UI in `packages/ui`.
+- [x] Export a basic Button component.
+- [x] Import and render the Button in `apps/portfolio`.
