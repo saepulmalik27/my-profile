@@ -6,6 +6,6 @@
 
 **Status:** ready-for-agent
 
-- [ ] Create `/api/chat` endpoint using Vercel AI SDK.
-- [ ] Configure a system prompt with the developer's CV data.
-- [ ] Test the endpoint to ensure streaming works.
+- [x] Create `/api/chat` endpoint using Vercel AI SDK.
+- [x] Configure a system prompt with the developer's CV data.
+- [x] Test the endpoint to ensure streaming works.
