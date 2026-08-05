@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "^4.0.30",
+    "@ai-sdk/react": "^4.0.55",
     "@repo/ui": "workspace:*",
     "ai": "^7.0.52",
     "gray-matter": "^4.0.3",

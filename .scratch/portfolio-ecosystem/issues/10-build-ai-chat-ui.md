@@ -6,5 +6,5 @@
 
 **Status:** ready-for-agent
 
-- [ ] Build the chat UI inside a designated Bento cell.
-- [ ] Connect the UI to `/api/chat` to handle user input and stream AI responses.
+- [x] Build the chat UI inside a designated Bento cell.
+- [x] Connect the UI to `/api/chat` to handle user input and stream AI responses.

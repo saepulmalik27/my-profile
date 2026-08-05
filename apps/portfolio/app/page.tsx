@@ -1,6 +1,14 @@
 import { BentoGrid, BentoCard } from '@repo/ui/bento-grid';
 import { Button } from '@repo/ui/button';
-import { ArrowRight, MapPin, Briefcase, Zap, Mail } from 'lucide-react';
+import {
+  ArrowRight,
+  MapPin,
+  Briefcase,
+  Zap,
+  Mail,
+  Terminal,
+} from 'lucide-react';
+import { ChatBox } from '../components/chat-box';
 
 export default function Page() {
   return (
@@ -163,6 +171,52 @@ export default function Page() {
                     {skill}
                   </span>
                 ))}
+              </div>
+            </div>
+          </BentoCard>
+
+          {/* AI Chatbot */}
+          <BentoCard
+            colSpan={2}
+            rowSpan={2}
+            className="p-0 border-primary/20 shadow-primary/5"
+          >
+            <ChatBox />
+          </BentoCard>
+
+          {/* MDX Projects Teaser */}
+          <BentoCard
+            colSpan={2}
+            rowSpan={2}
+            className="p-8 bg-gradient-to-tr from-background to-secondary/30"
+          >
+            <div className="flex flex-col h-full justify-between">
+              <div>
+                <h3 className="font-bold text-2xl mb-4 flex items-center gap-2">
+                  <Terminal className="h-6 w-6 text-primary" /> Technical
+                  Writing
+                </h3>
+                <p className="text-muted-foreground mb-6">
+                  I document my journey, architecture decisions, and deep dives
+                  into the frontend ecosystem. Check out how I built this
+                  AI-integrated portfolio using Next.js App Router and MDX.
+                </p>
+              </div>
+              <div className="space-y-3">
+                <a
+                  href="/projects/test"
+                  className="block p-4 bg-card border border-border rounded-xl hover:border-primary/50 transition-colors group"
+                >
+                  <div className="flex justify-between items-center mb-1">
+                    <h4 className="font-medium group-hover:text-primary transition-colors">
+                      Building an AI Portfolio
+                    </h4>
+                    <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors group-hover:translate-x-1" />
+                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    Integrating Vercel AI SDK into Bento Grid.
+                  </p>
+                </a>
               </div>
             </div>
           </BentoCard>
