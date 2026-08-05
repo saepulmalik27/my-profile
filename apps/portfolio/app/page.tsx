@@ -1,56 +1,170 @@
 import { BentoGrid, BentoCard } from '@repo/ui/bento-grid';
+import { Button } from '@repo/ui/button';
+import { ArrowRight, MapPin, Briefcase, Zap, Mail } from 'lucide-react';
 
 export default function Page() {
   return (
-    <div className="flex items-center justify-center min-h-screen p-4 md:p-8 bg-background text-foreground">
-      <main className="flex flex-col items-center gap-8 w-full max-w-6xl">
-        <div className="w-full space-y-2">
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-            Saepul Malik
+    <div className="flex items-center justify-center min-h-screen p-4 md:p-8 bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
+      <main className="flex flex-col items-center gap-8 w-full max-w-6xl py-12">
+        <header className="w-full space-y-3 mb-4">
+          <div className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
+            <Zap className="mr-1 h-3 w-3" /> 8 Years of Engineering Excellence
+          </div>
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">
+            Saepul Malik.
           </h1>
-          <p className="text-muted-foreground text-lg">
-            Senior Frontend Engineer & Creative Developer
+          <p className="text-muted-foreground text-xl max-w-2xl">
+            Senior Frontend Engineer bridging the gap between analytical Physics
+            and cutting-edge web development.
           </p>
-        </div>
+        </header>
 
         <BentoGrid className="w-full">
-          {/* Hero / About Section - Spans 2 cols, 2 rows on Desktop */}
+          {/* Hero / About Section */}
           <BentoCard
             colSpan={2}
             rowSpan={2}
-            className="p-8 bg-gradient-to-br from-primary/10 to-accent/10"
+            className="p-8 bg-gradient-to-br from-primary/15 via-primary/5 to-background border-primary/20"
           >
-            <h2 className="text-2xl font-bold mb-4">Hello, World!</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              This is the hero card. It will eventually contain a 3D model,
-              interactive avatar, or a bold introduction.
-            </p>
+            <div className="flex flex-col h-full justify-between">
+              <div>
+                <h2 className="text-3xl font-bold mb-4">
+                  Building Enterprise-Grade Web Experiences.
+                </h2>
+                <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+                  I specialize in scaling robust applications from the ground
+                  up. With a track record of leading UI modernizations and
+                  integrating AI features (OpenAI, RAG) into enterprise
+                  products, I craft interfaces that solve complex business
+                  problems.
+                </p>
+              </div>
+              <div className="flex gap-4">
+                <Button className="rounded-full shadow-lg hover:shadow-primary/25 transition-all">
+                  View Case Studies <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+                <Button variant="outline" className="rounded-full">
+                  Download CV
+                </Button>
+              </div>
+            </div>
           </BentoCard>
 
-          {/* Socials / Contact - Spans 1 col, 1 row */}
-          <BentoCard className="p-6 flex items-center justify-center">
-            <h3 className="font-semibold text-lg">Socials</h3>
-          </BentoCard>
-
-          {/* Location / Status - Spans 1 col, 1 row */}
-          <BentoCard className="p-6 flex items-center justify-center">
-            <h3 className="font-semibold text-lg">Location</h3>
-          </BentoCard>
-
-          {/* Projects Teaser - Spans 2 cols, 1 row */}
-          <BentoCard colSpan={2} rowSpan={1} className="p-6 bg-secondary/30">
-            <h3 className="font-semibold text-lg">Selected Projects</h3>
-          </BentoCard>
-
-          {/* Skills / Playground - Spans 4 cols on Desktop */}
-          <BentoCard
-            colSpan={4}
-            rowSpan={1}
-            className="p-6 border-dashed border-2"
-          >
-            <h3 className="font-semibold text-lg text-center w-full text-muted-foreground">
-              Skills & Tech Stack Grid
+          {/* Socials / Contact */}
+          <BentoCard className="p-6 bg-card flex flex-col justify-between">
+            <h3 className="font-semibold text-lg mb-4 text-muted-foreground">
+              Let&apos;s Connect
             </h3>
+            <div className="flex gap-4 mb-2">
+              <a
+                href="https://github.com/saepulmalik27"
+                target="_blank"
+                rel="noreferrer"
+                className="bg-secondary p-3 rounded-full hover:bg-primary hover:text-primary-foreground transition-colors font-bold text-sm flex items-center justify-center w-12 h-12"
+              >
+                GH
+              </a>
+              <a
+                href="#"
+                className="bg-secondary p-3 rounded-full hover:bg-primary hover:text-primary-foreground transition-colors font-bold text-sm flex items-center justify-center w-12 h-12"
+              >
+                IN
+              </a>
+              <a
+                href="#"
+                className="bg-secondary p-3 rounded-full hover:bg-primary hover:text-primary-foreground transition-colors flex items-center justify-center w-12 h-12"
+              >
+                <Mail className="h-5 w-5" />
+              </a>
+            </div>
+          </BentoCard>
+
+          {/* Location */}
+          <BentoCard className="p-6 relative overflow-hidden flex flex-col justify-end">
+            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1555899434-94d1368aa7af?auto=format&fit=crop&q=80&w=600')] bg-cover bg-center opacity-30 grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-40 group-hover:scale-105" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
+            <div className="relative z-10 flex items-center gap-2">
+              <MapPin className="h-5 w-5 text-primary" />
+              <div>
+                <h3 className="font-bold">Jakarta, Indonesia</h3>
+                <p className="text-xs text-muted-foreground">GMT+7</p>
+              </div>
+            </div>
+          </BentoCard>
+
+          {/* Experience Highlights */}
+          <BentoCard
+            colSpan={2}
+            rowSpan={1}
+            className="p-6 bg-secondary/20 border-secondary"
+          >
+            <h3 className="font-semibold text-lg flex items-center gap-2 mb-4">
+              <Briefcase className="h-5 w-5 text-primary" /> Impact Driven
+            </h3>
+            <div className="space-y-4">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h4 className="font-medium text-foreground">
+                    Inspigo For Business
+                  </h4>
+                  <p className="text-sm text-muted-foreground">
+                    Customizable Enterprise Platform
+                  </p>
+                </div>
+                <span className="text-xs bg-primary/20 text-primary px-2 py-1 rounded-md font-medium">
+                  B2B
+                </span>
+              </div>
+              <div className="flex justify-between items-start">
+                <div>
+                  <h4 className="font-medium text-foreground">
+                    Inspigo AI Integration
+                  </h4>
+                  <p className="text-sm text-muted-foreground">
+                    RAG Pipeline & Bedrock LLM
+                  </p>
+                </div>
+                <span className="text-xs bg-primary/20 text-primary px-2 py-1 rounded-md font-medium">
+                  AI/ML
+                </span>
+              </div>
+            </div>
+          </BentoCard>
+
+          {/* Skills / Tech Stack */}
+          <BentoCard colSpan={4} rowSpan={1} className="p-8">
+            <div className="flex flex-col md:flex-row gap-8 items-center justify-between h-full">
+              <div className="flex-shrink-0">
+                <h3 className="font-bold text-xl mb-1">
+                  Architecture & Tech Stack
+                </h3>
+                <p className="text-muted-foreground text-sm max-w-xs">
+                  Mastering the modern web ecosystem to deliver fast and
+                  scalable applications.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-2 justify-end w-full">
+                {[
+                  'React 19',
+                  'Next.js (App Router)',
+                  'TypeScript',
+                  'Tailwind v4',
+                  'Micro-frontend',
+                  'SSR/SSG',
+                  'State Management',
+                  'Prompt Engineering',
+                  'OpenAI API',
+                  'Web Performance',
+                ].map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-3 py-1.5 bg-secondary text-secondary-foreground text-sm rounded-lg font-medium border border-border/50 shadow-sm"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
           </BentoCard>
         </BentoGrid>
       </main>

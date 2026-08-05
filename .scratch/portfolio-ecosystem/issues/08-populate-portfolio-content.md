@@ -6,5 +6,5 @@
 
 **Status:** ready-for-agent
 
-- [ ] Fill the Bento Box cells with real data based on the CV brainstorm docs.
-- [ ] Add Framer Motion for scroll-in animations and hover states.
+- [x] Fill the Bento Box cells with real data based on the CV brainstorm docs.
+- [x] Add Framer Motion for scroll-in animations and hover states.

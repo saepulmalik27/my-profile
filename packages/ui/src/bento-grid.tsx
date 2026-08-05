@@ -1,5 +1,8 @@
+'use client';
+
 import { cn } from './lib/utils';
 import React from 'react';
+import { motion } from 'framer-motion';
 
 export function BentoGrid({
   className,
@@ -9,14 +12,25 @@ export function BentoGrid({
   children: React.ReactNode;
 }) {
   return (
-    <div
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: '-50px' }}
+      variants={{
+        visible: {
+          transition: {
+            staggerChildren: 0.1,
+          },
+        },
+        hidden: {},
+      }}
       className={cn(
         'grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[250px]',
         className
       )}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }
 
@@ -46,18 +60,28 @@ export function BentoCard({
   };
 
   return (
-    <div
+    <motion.div
+      variants={{
+        hidden: { opacity: 0, y: 20, scale: 0.95 },
+        visible: {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          transition: { type: 'spring', stiffness: 100, damping: 15 },
+        },
+      }}
+      whileHover={{ scale: 0.98, transition: { duration: 0.2 } }}
       className={cn(
         'group relative flex flex-col justify-between overflow-hidden rounded-3xl',
         'bg-card text-card-foreground',
         'border border-border',
-        'shadow-sm transition-all duration-300 hover:shadow-lg hover:border-primary/30',
+        'shadow-sm transition-colors duration-300 hover:shadow-lg hover:border-primary/30',
         colSpanClasses[colSpan],
         rowSpanClasses[rowSpan],
         className
       )}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }
