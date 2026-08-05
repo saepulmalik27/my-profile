@@ -6,5 +6,5 @@
 
 **Status:** ready-for-agent
 
-- [ ] Setup MDX parsing (e.g., `next-mdx-remote` or similar).
-- [ ] Render a local `.mdx` file successfully at a dynamic route.
+- [x] Setup MDX parsing (e.g., `next-mdx-remote` or similar).
+- [x] Render a local `.mdx` file successfully at a dynamic route.
