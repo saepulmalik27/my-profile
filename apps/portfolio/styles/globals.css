@@ -1,0 +1,29 @@
+@import 'tailwindcss';
+
+@source "../app";
+@source "../../packages/ui/src";
+
+@import './theme.css';
+@import './color.css';
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-border, currentColor);
+  }
+}
+
+@utility antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  @apply antialiased;
+}
