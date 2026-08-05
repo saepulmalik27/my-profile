@@ -6,5 +6,5 @@
 
 **Status:** ready-for-agent
 
-- [ ] Create the CSS Grid/Tailwind layout for a Bento Box in `apps/portfolio`.
-- [ ] Ensure the grid is responsive across mobile, tablet, and desktop.
+- [x] Create the CSS Grid/Tailwind layout for a Bento Box in `apps/portfolio`.
+- [x] Ensure the grid is responsive across mobile, tablet, and desktop.
