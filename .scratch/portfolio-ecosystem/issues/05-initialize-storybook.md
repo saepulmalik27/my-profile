@@ -6,6 +6,6 @@
 
 **Status:** ready-for-agent
 
-- [ ] Setup Storybook in `apps/storybook`.
-- [ ] Configure it to read from `packages/ui`.
-- [ ] Render the Button component in a story.
+- [x] Setup Storybook in `apps/storybook`.
+- [x] Configure it to read from `packages/ui`.
+- [x] Render the Button component in a story.
