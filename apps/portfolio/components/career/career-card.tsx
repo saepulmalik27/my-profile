@@ -2,10 +2,17 @@
 
 import { ChevronDown } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import type { CareerEntry } from '../../content/types';
 import { TECH_ICONS } from './tech-icons';
+
+const COMPANY_LOGOS: Record<string, string> = {
+  inspigo: '/assets/logo/inspigo.png',
+  praweda: '/assets/logo/praweda.png',
+  indocyber: '/assets/logo/iglo.png',
+};
 
 // Ticket 08: expandable card per role — collapsed shows role/company/dates
 // + top highlight, expands to the full achievement list and tech tags.
@@ -19,6 +26,7 @@ export function CareerCard({
   caseStudyTitles: Record<string, string>;
 }) {
   const [open, setOpen] = useState(false);
+  const logo = COMPANY_LOGOS[entry.id];
 
   return (
     <motion.div
@@ -46,7 +54,20 @@ export function CareerCard({
           <h3 className="mt-1 font-display text-xl font-medium text-foreground">
             {entry.role}
           </h3>
-          <p className="mt-1 text-sm text-foreground/60">{entry.company}</p>
+          <p className="mt-1 flex items-center gap-1.5 text-sm text-foreground/60">
+            {logo && (
+              <span className="inline-flex h-5 w-5 flex-none items-center justify-center overflow-hidden rounded-full bg-white">
+                <Image
+                  src={logo}
+                  alt=""
+                  width={20}
+                  height={20}
+                  className="h-full w-full object-cover"
+                />
+              </span>
+            )}
+            {entry.company}
+          </p>
           <p className="mt-3 text-sm text-foreground/80">
             {entry.topHighlight}
           </p>
