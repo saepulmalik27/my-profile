@@ -1,0 +1,9 @@
+{
+  "projectId": "2d28c6ad-b2b5-4398-8fa9-65851a06c2ab",
+  "shape": "storybook",
+  "storybookConfigDir": "apps/storybook/.storybook",
+  "pkg": "@repo/ui",
+  "entry": "packages/ui/src/index.ts",
+  "storybookStatic": ".design-sync/sb-reference",
+  "readmeHeader": ".design-sync/conventions.md"
+}
