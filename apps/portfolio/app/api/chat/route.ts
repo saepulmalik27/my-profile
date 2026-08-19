@@ -1,5 +1,5 @@
 import { streamText } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { deepseek } from '@ai-sdk/deepseek';
 
 export const maxDuration = 30;
 
@@ -25,12 +25,12 @@ export async function POST(req: Request) {
   try {
     const { messages } = await req.json();
 
-    if (!process.env.OPENAI_API_KEY) {
+    if (!process.env.DEEPSEEK_API_KEY) {
       // Return a mock stream if there is no API key configured
       const stream = new ReadableStream({
         async start(controller) {
           const text =
-            "Hi! I am the mock AI assistant for Saepul Malik. Currently, the OPENAI_API_KEY is not configured, so I am responding with a static message. Once configured, I will be able to answer any questions about Saepul's 8 years of engineering experience in real-time!";
+            "Hi! I am the mock AI assistant for Saepul Malik. Currently, the DEEPSEEK_API_KEY is not configured, so I am responding with a static message. Once configured, I will be able to answer any questions about Saepul's 8 years of engineering experience in real-time!";
           const chunks = text.split(' ');
 
           for (let i = 0; i < chunks.length; i++) {
@@ -55,7 +55,7 @@ export async function POST(req: Request) {
     }
 
     const result = streamText({
-      model: openai('gpt-4o-mini'),
+      model: deepseek('deepseek-chat'),
       system: SYSTEM_PROMPT,
       messages,
     });

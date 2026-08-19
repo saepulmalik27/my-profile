@@ -1,5 +1,6 @@
 import { BentoGrid, BentoCard } from '@repo/ui/bento-grid';
 import { Button } from '@repo/ui/button';
+import Link from 'next/link';
 import {
   ArrowRight,
   MapPin,
@@ -9,11 +10,37 @@ import {
   Terminal,
 } from 'lucide-react';
 import { ChatBox } from '../components/chat-box';
+import { RoomSceneLoader } from '../components/scene/room-scene-loader';
 
 export default function Page() {
   return (
-    <div className="flex items-center justify-center min-h-screen p-4 md:p-8 bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
-      <main className="flex flex-col items-center gap-8 w-full max-w-6xl py-12">
+    <div className="flex flex-col items-center min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
+      {/*
+        3D home scene (tickets 01/02/03) — foundation pass: room shell + the
+        "Two Lights" lighting rig, no furniture/avatar yet. Per ticket 04,
+        real semantic HTML (not the canvas) is what carries the name/role/
+        description for a11y, SEO, and prefers-reduced-motion users; the
+        canvas is layered underneath as a decorative/supplementary element.
+      */}
+      <section className="relative w-full h-screen overflow-hidden">
+        <div className="absolute inset-0" aria-hidden="true">
+          <RoomSceneLoader />
+        </div>
+        <div className="relative z-10 flex h-full flex-col items-start justify-end gap-3 px-6 pb-16 md:px-16 md:pb-24">
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
+            Saepul Malik
+          </h1>
+          <p className="text-lg md:text-xl font-medium text-white/80 drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+            Frontend Engineer
+          </p>
+          <p className="max-w-xl text-base md:text-lg text-white/70 drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+            Senior Frontend Engineer bridging the gap between analytical Physics
+            and cutting-edge web development.
+          </p>
+        </div>
+      </section>
+
+      <main className="flex flex-col items-center gap-8 w-full max-w-6xl py-12 px-4 md:px-8">
         <header className="w-full space-y-3 mb-4">
           <div className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
             <Zap className="mr-1 h-3 w-3" /> 8 Years of Engineering Excellence
@@ -203,7 +230,7 @@ export default function Page() {
                 </p>
               </div>
               <div className="space-y-3">
-                <a
+                <Link
                   href="/projects/test"
                   className="block p-4 bg-card border border-border rounded-xl hover:border-primary/50 transition-colors group"
                 >
@@ -216,7 +243,7 @@ export default function Page() {
                   <p className="text-xs text-muted-foreground">
                     Integrating Vercel AI SDK into Bento Grid.
                   </p>
-                </a>
+                </Link>
               </div>
             </div>
           </BentoCard>
