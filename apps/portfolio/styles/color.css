@@ -1,32 +1,48 @@
-@theme {
-  --color-border: hsl(var(--border));
-  --color-input: hsl(var(--input));
-  --color-ring: hsl(var(--ring));
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
+@layer base {
+  :root {
+    /* "Two Lights" palette (ticket 03/06) — single dark-first theme, no
+       light mode. The room has exactly two default light sources (amber
+       lamp, cyan monitor); the site's accent system mirrors that. */
+    --two-lights-ink: #12141f;
+    --two-lights-surface: #1f2438;
+    --two-lights-surface-2: #262c46;
+    --two-lights-amber: #f2a65a;
+    --two-lights-cyan: #6fe2d6;
+    --two-lights-dusk: #4a5578;
+    --two-lights-paper: #f5ede0;
 
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
+    /* Semantic slots @repo/ui and app components consume. */
+    --background: var(--two-lights-ink);
+    --foreground: var(--two-lights-paper);
 
-  --color-secondary: hsl(var(--secondary));
-  --color-secondary-foreground: hsl(var(--secondary-foreground));
+    --card: var(--two-lights-surface);
+    --card-foreground: var(--two-lights-paper);
 
-  --color-destructive: hsl(var(--destructive));
-  --color-destructive-foreground: hsl(var(--destructive-foreground));
+    --popover: var(--two-lights-surface);
+    --popover-foreground: var(--two-lights-paper);
 
-  --color-muted: hsl(var(--muted));
-  --color-muted-foreground: hsl(var(--muted-foreground));
+    /* Primary = amber: the "human"/actionable accent — CTAs, links, the
+       user's own chat messages. */
+    --primary: var(--two-lights-amber);
+    --primary-foreground: var(--two-lights-ink);
 
-  --color-accent: hsl(var(--accent));
-  --color-accent-foreground: hsl(var(--accent-foreground));
+    --secondary: var(--two-lights-surface-2);
+    --secondary-foreground: var(--two-lights-paper);
 
-  --color-popover: hsl(var(--popover));
-  --color-popover-foreground: hsl(var(--popover-foreground));
+    --muted: var(--two-lights-surface);
+    --muted-foreground: var(--two-lights-dusk);
 
-  --color-card: hsl(var(--card));
-  --color-card-foreground: hsl(var(--card-foreground));
+    /* Accent = cyan: the "technical"/live-state accent — status
+       indicators, the assistant's chat messages, code/skills content. */
+    --accent: var(--two-lights-cyan);
+    --accent-foreground: var(--two-lights-ink);
 
-  --radius-lg: var(--radius);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-sm: calc(var(--radius) - 4px);
+    --destructive: #e5484d;
+    --destructive-foreground: var(--two-lights-paper);
+
+    /* Hairline low-opacity borders carry elevation instead of shadows. */
+    --border: rgba(245, 237, 224, 0.12);
+    --input: rgba(245, 237, 224, 0.12);
+    --ring: var(--two-lights-cyan);
+  }
 }

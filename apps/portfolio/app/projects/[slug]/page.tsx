@@ -26,16 +26,42 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const { content, data: frontmatter } = matter(fileContent);
 
   return (
-    <div className="min-h-screen bg-background text-foreground p-8 md:p-16 flex justify-center">
+    // pt-28/md:pt-32 clears the fixed site nav (ticket 07) — this page
+    // used to render flush against the top, partially hidden behind it.
+    <div className="min-h-screen bg-background text-foreground px-8 pb-8 pt-28 md:px-16 md:pb-16 md:pt-32 flex justify-center">
       <article className="max-w-3xl w-full">
         <header className="mb-12 border-b border-border pb-8">
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+          <span className="font-mono text-xs uppercase tracking-widest text-accent">
+            Case study
+          </span>
+          <h1 className="mt-3 text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
             {frontmatter.title || 'Untitled Project'}
           </h1>
-          {frontmatter.date && (
-            <time className="text-muted-foreground text-lg">
-              {frontmatter.date}
-            </time>
+          {frontmatter.summary && (
+            <p className="text-foreground/70 text-lg mb-4">
+              {frontmatter.summary}
+            </p>
+          )}
+          <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+            {frontmatter.company && <span>{frontmatter.company}</span>}
+            {frontmatter.period && (
+              <>
+                <span aria-hidden="true">·</span>
+                <span>{frontmatter.period}</span>
+              </>
+            )}
+          </div>
+          {Array.isArray(frontmatter.tags) && frontmatter.tags.length > 0 && (
+            <div className="mt-4 flex flex-wrap gap-2">
+              {frontmatter.tags.map((tag: string) => (
+                <span
+                  key={tag}
+                  className="rounded-md border border-border bg-secondary/40 px-2.5 py-1 font-mono text-xs text-foreground/80"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           )}
         </header>
 

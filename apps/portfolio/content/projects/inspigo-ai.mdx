@@ -1,0 +1,36 @@
+---
+title: 'Inspigo AI: Real-Time RAG for Personalized Learning'
+company: 'PT Inspigo Inovasi Indonesia'
+period: '2021–Present'
+summary: 'A streaming chatbot experience powered by OpenAI/Bedrock and a RAG pipeline, grounded in the platform’s own learning content.'
+tags: ['Next.js', 'OpenAI', 'Bedrock', 'RAG']
+---
+
+## Problem
+
+Personalized learning benefits from conversational, context-aware
+assistance rather than static content lookup — but a foundation model
+answering purely from its general training data isn't grounded in what
+the platform actually teaches.
+
+## Architecture
+
+Inspigo AI integrates Foundation Models (OpenAI, AWS Bedrock) behind a
+Retrieval-Augmented Generation pipeline. Instead of relying on the
+model's general knowledge alone, responses are grounded in retrieved
+content from the platform itself before generation happens.
+
+## Execution
+
+The frontend work centered on the chat experience: handling real-time
+streaming responses token by token, and managing the perceived latency
+between a user's question and the first visible piece of an answer —
+the gap between "the model is thinking" and "the model is already
+answering."
+
+## Impact
+
+The result reads less like a search box and more like a conversation —
+answers stream in immediately and stay grounded in Inspigo's own
+learning content rather than drifting into generic, ungrounded
+responses.

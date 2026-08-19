@@ -72,10 +72,10 @@ export function BentoCard({
       }}
       whileHover={{ scale: 0.98, transition: { duration: 0.2 } }}
       className={cn(
-        'group relative flex flex-col justify-between overflow-hidden rounded-3xl',
+        'group relative flex flex-col justify-between overflow-hidden rounded-lg',
         'bg-card text-card-foreground',
         'border border-border',
-        'shadow-sm transition-colors duration-300 hover:shadow-lg hover:border-primary/30',
+        'transition-colors duration-300 hover:border-primary/40',
         colSpanClasses[colSpan],
         rowSpanClasses[rowSpan],
         className
