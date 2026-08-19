@@ -1,4 +1,25 @@
+import type { Metadata } from 'next';
 import { HomeExperience } from '../components/scene/home-experience';
+import { profile } from '../content/profile';
+import { defaultOpenGraph, defaultTwitter } from '../lib/seo';
+
+const homeDescription = `${profile.tagline} Explore an interactive 3D room built with Next.js, React Three Fiber, and an AI chat grounded in this site's own content.`;
+
+export const metadata: Metadata = {
+  description: homeDescription,
+  alternates: { canonical: '/' },
+  openGraph: {
+    url: '/',
+    title: `${profile.name} — ${profile.role}`,
+    description: homeDescription,
+    ...defaultOpenGraph,
+  },
+  twitter: {
+    title: `${profile.name} — ${profile.role}`,
+    description: homeDescription,
+    ...defaultTwitter,
+  },
+};
 
 export default function Page() {
   return (

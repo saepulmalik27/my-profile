@@ -1,29 +1,66 @@
 import fs from 'fs/promises';
 import path from 'path';
+import type { Metadata } from 'next';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import matter from 'gray-matter';
 import { notFound } from 'next/navigation';
+import { defaultOpenGraph, defaultTwitter } from '../../../lib/seo';
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
 }
 
-export default async function ProjectPage({ params }: ProjectPageProps) {
+async function readProject(slug: string) {
+  const filePath = path.join(process.cwd(), 'content/projects', `${slug}.mdx`);
+  const fileContent = await fs.readFile(filePath, 'utf-8');
+  return matter(fileContent);
+}
+
+export async function generateMetadata({
+  params,
+}: ProjectPageProps): Promise<Metadata> {
   const { slug } = await params;
-  let fileContent = '';
 
   try {
-    const filePath = path.join(
-      process.cwd(),
-      'content/projects',
-      `${slug}.mdx`
-    );
-    fileContent = await fs.readFile(filePath, 'utf-8');
+    const { data: frontmatter } = await readProject(slug);
+    const title = frontmatter.title || 'Untitled Project';
+    const description = frontmatter.summary || undefined;
+
+    return {
+      title,
+      description,
+      alternates: { canonical: `/projects/${slug}` },
+      openGraph: {
+        url: `/projects/${slug}`,
+        type: 'article',
+        title,
+        description,
+        ...defaultOpenGraph,
+      },
+      twitter: {
+        title,
+        description,
+        ...defaultTwitter,
+      },
+    };
+  } catch {
+    return { title: 'Case study' };
+  }
+}
+
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { slug } = await params;
+  let content = '';
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let frontmatter: Record<string, any> = {};
+
+  try {
+    const parsed = await readProject(slug);
+    content = parsed.content;
+    frontmatter = parsed.data;
   } catch {
     notFound();
   }
-
-  const { content, data: frontmatter } = matter(fileContent);
 
   return (
     // pt-28/md:pt-32 clears the fixed site nav (ticket 07) — this page

@@ -5,11 +5,26 @@ import { career } from '../../content/career';
 import { contactLinks } from '../../content/about';
 import { profile } from '../../content/profile';
 import { getCaseStudies } from '../../lib/get-case-studies';
+import { defaultOpenGraph, defaultTwitter } from '../../lib/seo';
+
+const careerDescription =
+  'Work history: eight years across full-stack foundations and a frontend/AI specialization.';
 
 export const metadata: Metadata = {
-  title: `Career — ${profile.name}`,
-  description:
-    'Work history: eight years across full-stack foundations and a frontend/AI specialization.',
+  title: 'Career',
+  description: careerDescription,
+  alternates: { canonical: '/career' },
+  openGraph: {
+    url: '/career',
+    title: `Career — ${profile.name}`,
+    description: careerDescription,
+    ...defaultOpenGraph,
+  },
+  twitter: {
+    title: `Career — ${profile.name}`,
+    description: careerDescription,
+    ...defaultTwitter,
+  },
 };
 
 export default async function CareerPage() {

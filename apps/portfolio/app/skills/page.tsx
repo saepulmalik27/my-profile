@@ -4,11 +4,26 @@ import { Reveal } from '../../components/ui/reveal';
 import { profile } from '../../content/profile';
 import { skillCategories } from '../../content/skills';
 import { getCaseStudies } from '../../lib/get-case-studies';
+import { defaultOpenGraph, defaultTwitter } from '../../lib/seo';
+
+const skillsDescription =
+  'Technical skills grouped by category, plus a few case studies worth a closer look.';
 
 export const metadata: Metadata = {
-  title: `Skills & Showcase — ${profile.name}`,
-  description:
-    'Technical skills grouped by category, plus a few case studies worth a closer look.',
+  title: 'Skills & Showcase',
+  description: skillsDescription,
+  alternates: { canonical: '/skills' },
+  openGraph: {
+    url: '/skills',
+    title: `Skills & Showcase — ${profile.name}`,
+    description: skillsDescription,
+    ...defaultOpenGraph,
+  },
+  twitter: {
+    title: `Skills & Showcase — ${profile.name}`,
+    description: skillsDescription,
+    ...defaultTwitter,
+  },
 };
 
 export default async function SkillsPage() {

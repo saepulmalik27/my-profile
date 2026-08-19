@@ -14,8 +14,9 @@ import { RoomSceneLoader } from './room-scene-loader';
 
 export function HomeExperience() {
   const [pose, setPose] = useState<AvatarPose>('stand');
-  // Shared with SiteNav (ticket 07) — the nav's own "hidden until engaged"
-  // rule reacts to the same first-click signal as this page's hint fade.
+  // Drives the "try clicking around the room" hint's fade-out on first
+  // interaction (nav visibility no longer depends on this — it's always
+  // shown now).
   const { hasEngagedHome, markEngaged } = useSceneEngagement();
   // Lifted out of RoomScene so it can be toggled two ways: walking to the
   // in-scene switch, or this component's own "light up the room" button —
@@ -66,14 +67,16 @@ export function HomeExperience() {
           viewport (h-full) even though the visible text only occupies its
           bottom-left corner — without this, the empty rest of the box
           would silently swallow every click meant for the canvas below.
-          Re-enabled per-element on the bits that actually need clicking. */}
-      <div className="pointer-events-none relative z-10 flex h-full flex-col items-start justify-end gap-3 px-6 pb-16 md:px-16 md:pb-24">
+          Re-enabled per-element on the bits that actually need clicking.
+          mx-auto max-w-6xl + the same px-6/md:px-10 as SiteNav's inner
+          container, so "Saepul Malik" lines up with the nav logo above it. */}
+      <div className="pointer-events-none relative z-10 mx-auto flex h-full max-w-6xl flex-col items-start justify-end gap-3 px-6 pb-16 md:px-10 md:pb-24">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
           Saepul Malik
         </h1>
-        <p className="text-lg md:text-xl font-medium text-white/80 drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+        <h3 className="text-lg md:text-xl italic font-medium text-amber-500 shadow">
           Frontend Engineer
-        </p>
+        </h3>
         <p className="max-w-xl text-base md:text-lg text-white/70 drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
           Senior Frontend Engineer bridging the gap between analytical Physics
           and cutting-edge web development.

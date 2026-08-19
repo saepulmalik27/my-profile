@@ -1,4 +1,3 @@
-import { Button } from '@repo/ui/button';
 import { Mail, Phone } from 'lucide-react';
 import type { Metadata } from 'next';
 import type { ComponentType } from 'react';
@@ -7,10 +6,23 @@ import { Reveal } from '../../components/ui/reveal';
 import { aboutMilestones, contactLinks } from '../../content/about';
 import { profile } from '../../content/profile';
 import type { ContactLink } from '../../content/types';
+import { defaultOpenGraph, defaultTwitter } from '../../lib/seo';
 
 export const metadata: Metadata = {
-  title: `About & Contact — ${profile.name}`,
+  title: 'About & Contact',
   description: profile.tagline,
+  alternates: { canonical: '/about' },
+  openGraph: {
+    url: '/about',
+    title: `About & Contact — ${profile.name}`,
+    description: profile.tagline,
+    ...defaultOpenGraph,
+  },
+  twitter: {
+    title: `About & Contact — ${profile.name}`,
+    description: profile.tagline,
+    ...defaultTwitter,
+  },
 };
 
 // Ticket 10: direct links only, real icons per type — no generic
@@ -93,27 +105,6 @@ export default function AboutPage() {
               </a>
             );
           })}
-        </div>
-      </section>
-
-      {/* Resume — download + inline preview (ticket 10) */}
-      <section>
-        <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
-          <h2 className="font-display text-2xl font-semibold text-foreground">
-            Resume
-          </h2>
-          <Button asChild>
-            <a href={profile.resumeUrl} download>
-              Download CV
-            </a>
-          </Button>
-        </div>
-        <div className="overflow-hidden rounded-lg border border-border bg-card">
-          <iframe
-            src={profile.resumeUrl}
-            title={`${profile.name} — resume preview`}
-            className="h-[600px] w-full"
-          />
         </div>
       </section>
     </main>

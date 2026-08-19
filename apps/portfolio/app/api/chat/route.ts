@@ -1,4 +1,10 @@
-import { streamText } from 'ai';
+import {
+  convertToModelMessages,
+  createUIMessageStream,
+  createUIMessageStreamResponse,
+  streamText,
+  type UIMessage,
+} from 'ai';
 import { deepseek } from '@ai-sdk/deepseek';
 import { buildSystemPrompt } from '../../../content/system-prompt';
 
@@ -6,44 +12,41 @@ export const maxDuration = 30;
 
 export async function POST(req: Request) {
   try {
-    const { messages } = await req.json();
+    const { messages }: { messages: UIMessage[] } = await req.json();
 
     if (!process.env.DEEPSEEK_API_KEY) {
-      // Return a mock stream if there is no API key configured
-      const stream = new ReadableStream({
-        async start(controller) {
-          const text =
-            "Hi! I am the mock AI assistant for Saepul Malik. Currently, the DEEPSEEK_API_KEY is not configured, so I am responding with a static message. Once configured, I will be able to answer any questions about Saepul's 8 years of engineering experience in real-time!";
-          const chunks = text.split(' ');
+      // Mock stream when no API key is configured — built with the same UI
+      // Message Stream protocol useChat expects for the real path below.
+      // A hand-rolled legacy text-stream here fails to parse client-side.
+      const text =
+        "Hi! I am the mock AI assistant for Saepul Malik. Currently, the DEEPSEEK_API_KEY is not configured, so I am responding with a static message. Once configured, I will be able to answer any questions about Saepul's 8 years of engineering experience in real-time!";
 
-          for (let i = 0; i < chunks.length; i++) {
-            // Vercel AI SDK expects text stream chunks in the format: 0:"chunk text"
-            // We append a space for all but the last chunk
-            const space = i === chunks.length - 1 ? '' : ' ';
-            const chunkString = `0:${JSON.stringify(chunks[i] + space)}\n`;
-            controller.enqueue(new TextEncoder().encode(chunkString));
-            // Simulate typing delay
-            await new Promise((r) => setTimeout(r, 50));
+      const stream = createUIMessageStream({
+        execute: async ({ writer }) => {
+          const id = 'mock-response';
+          writer.write({ type: 'text-start', id });
+          for (const word of text.split(' ')) {
+            writer.write({ type: 'text-delta', id, delta: `${word} ` });
+            await new Promise((resolve) => setTimeout(resolve, 50));
           }
-          controller.close();
+          writer.write({ type: 'text-end', id });
         },
       });
 
-      return new Response(stream, {
-        headers: {
-          'Content-Type': 'text/plain; charset=utf-8',
-          'X-Vercel-AI-Data-Stream': 'v1',
-        },
-      });
+      return createUIMessageStreamResponse({ stream });
     }
 
+    // useChat sends UIMessage[] (the `parts`-based client format);
+    // streamText needs ModelMessage[] (the `content`-based model format) —
+    // convertToModelMessages bridges the two. Passing UIMessage[] straight
+    // through is what caused AI_InvalidPromptError.
     const result = streamText({
       model: deepseek('deepseek-chat'),
       system: buildSystemPrompt(),
-      messages,
+      messages: await convertToModelMessages(messages),
     });
 
-    return result.toTextStreamResponse();
+    return result.toUIMessageStreamResponse();
   } catch (error) {
     console.error('Chat API Error:', error);
     return new Response('Internal Server Error', { status: 500 });
