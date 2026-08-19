@@ -29,6 +29,18 @@ Don't invent ad-hoc hex colors or spacing — this system's whole visual identit
 
 Other real tokens: `border-border`, `border-input`, `ring-ring`, `rounded-md` / `rounded-lg` (via `--radius-md`/`--radius-lg`), `font-sans` / `font-mono`. Build any new layout markup (divs, sections, headers you compose around `Button`) using these classes, not arbitrary colors — that's what keeps a generated design visually consistent with the rest of the site.
 
+### `Tag`
+
+A mono pill for labels/facts (tech stack, dates, status words) — never a button, never a link. It's deliberately uncolored: don't add background-color overrides to imply category or state, that's what `Button` variants and text color are for.
+
+```jsx
+<Tag>TypeScript</Tag>
+```
+
+### Hover/focus glow (motion)
+
+`Button`'s `default`, `destructive`, and `outline` variants bloom with a colored `box-shadow` on hover/focus-visible (amber for `default`, red for `destructive`, cyan for `outline`) over ~200ms — "quiet by default, a spark on contact." Reuse this idiom (a soft, color-matched `shadow-[0_0_22px_-Npx_rgba(...)]` on hover) for any new actionable element you build, rather than a generic `hover:opacity` fade.
+
 ### `Button` API
 
 ```ts

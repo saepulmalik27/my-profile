@@ -4,15 +4,19 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from './lib/utils';
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-200 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
+      // Hover/focus glow follows the "Two Lights" motion language (ticket 06):
+      // amber for things you act on, cyan for the cyan-accented secondary path.
+      // Kept additive to each variant's existing hover treatment.
       variant: {
-        default: 'bg-primary text-primary-foreground hover:bg-primary/90',
+        default:
+          'bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-[0_0_22px_-6px_rgba(242,166,90,0.6)] focus-visible:shadow-[0_0_22px_-6px_rgba(242,166,90,0.6)]',
         destructive:
-          'bg-destructive text-destructive-foreground hover:bg-destructive/90',
+          'bg-destructive text-destructive-foreground hover:bg-destructive/90 hover:shadow-[0_0_22px_-6px_rgba(229,72,77,0.55)] focus-visible:shadow-[0_0_22px_-6px_rgba(229,72,77,0.55)]',
         outline:
-          'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
+          'border border-input bg-background hover:bg-accent hover:text-accent-foreground hover:border-accent hover:shadow-[0_0_22px_-8px_rgba(111,226,214,0.6)] focus-visible:shadow-[0_0_22px_-8px_rgba(111,226,214,0.6)]',
         secondary:
           'bg-secondary text-secondary-foreground hover:bg-secondary/80',
         ghost: 'hover:bg-accent hover:text-accent-foreground',

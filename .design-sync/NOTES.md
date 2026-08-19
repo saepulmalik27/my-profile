@@ -11,6 +11,13 @@
 - Only `Button` is synced (packages/ui also has `Card`, `Code`, `BentoGrid` but none have Storybook stories yet — user chose "sync Button only" over adding stories for the rest, 2026-08-19). `Card`/`Code` are unused Turborepo starter boilerplate (dead template code, not used anywhere in `apps/portfolio`). `BentoGrid` is real (used in the portfolio) but has no story — worth adding a story for it in a future pass if it should be in the design system.
 - `apps/portfolio/components/**` (nav, career cards, chat widgets, 3D scene) are the site's real richer UI but live as page-local Next.js components, not an exported package — out of scope for this sync shape.
 
+## 2026-08-19 update: Two Lights Kit (ticket 06) glow + Tag
+
+- Source: "Two Lights Kit" artifact (https://claude.ai/code/artifact/d3907023-43b2-42c1-8dc1-a2bb4d9746f1), the approved answer for `docs/wayfinder/portfolio-revamp/tickets/06-sitewide-visual-theme.md`. Its color tokens/radius/fonts were already implemented in `theme.css`/`color.css` before this update — only two gaps were addressed, by explicit user scope choice (declined: porting Nav/Cards/Chat-launcher out of `apps/portfolio` into `packages/ui`; declined: no-code-change refresh):
+  - `packages/ui/src/button.tsx`: added the kit's hover/focus-visible glow (colored `box-shadow`, ~200ms) to `default`/`destructive`/`outline` variants, additive on top of existing hover behavior. Not visible in a resting-state screenshot, so compare correctly still grades `match` — verified by code review against the kit's `.btn` CSS, not by a captured hover state (Storybook static export doesn't have an interaction/play function set up for this).
+  - `packages/ui/src/tag.tsx`: new primitive — mono, uncolored pill (`bg-surface`, `border-border`, `text-foreground/70`), per the kit's "tag/pill (mono, uncolored — color reserved for state/action)" spec. Story added at `apps/storybook/src/stories/Tag.stories.tsx`.
+- `apps/portfolio/components/career/career-card.tsx` already has its own inline tag-like markup (`rounded-md border border-border bg-secondary/40 ... font-mono text-xs text-foreground/80`) as part of the user's own in-progress uncommitted work — left untouched; consider swapping it to `<Tag>` in a future pass once that work lands.
+
 ## Re-sync risks
 
 - If `packages/ui/src/index.ts` or `packages/ui/package.json`'s `types` field is reverted/removed, the next sync will silently drop all components again as `[TITLE_UNMAPPED]` with no fatal error — watch for `exported PascalCase symbols: 0` in the build log.
