@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import { Reveal } from '../../components/ui/reveal';
 import { profile } from '../../content/profile';
+import { certificates, currentlyLearning } from '../../content/showcase';
 import { skillCategories } from '../../content/skills';
 import { defaultOpenGraph, defaultTwitter } from '../../lib/seo';
 
-const skillsDescription = 'Technical skills grouped by category.';
+const skillsDescription =
+  'Technical skills grouped by category, plus what I’m currently learning.';
 
 export const metadata: Metadata = {
   title: 'Skills',
@@ -34,8 +36,7 @@ export default function SkillsPage() {
           What I build with.
         </h1>
         <p className="mt-4 text-foreground/70">
-          A categorized skill set, with a proficiency signal — daily driver,
-          used on real work, or actively learning.
+          A categorized skill set, grouped by area.
         </p>
       </header>
 
@@ -56,9 +57,9 @@ export default function SkillsPage() {
                   className="rounded-md border border-border bg-secondary/40 px-2.5 py-1 font-mono text-xs text-foreground/80"
                 >
                   {skill.name}
-                  {skill.level !== 'daily' && (
+                  {skill.level === 'learning' && (
                     <span className="ml-1.5 text-foreground/40">
-                      · {skill.level}
+                      · learning
                     </span>
                   )}
                 </span>
@@ -66,6 +67,49 @@ export default function SkillsPage() {
             </div>
           </Reveal>
         ))}
+      </section>
+
+      <section className="mt-16">
+        <h2 className="mb-6 font-display text-2xl font-semibold text-foreground">
+          Currently learning
+        </h2>
+        <Reveal className="rounded-lg border border-border bg-card p-5">
+          <div className="flex flex-wrap gap-2">
+            {currentlyLearning.topics.map((topic) => (
+              <span
+                key={topic}
+                className="rounded-md border border-border bg-secondary/40 px-2.5 py-1 font-mono text-xs text-foreground/80"
+              >
+                {topic}
+              </span>
+            ))}
+          </div>
+          <p className="mt-4 text-sm text-foreground/70">
+            {currentlyLearning.why}
+          </p>
+          <p className="mt-2 text-sm text-foreground/70">
+            {currentlyLearning.how} Underway since {currentlyLearning.since},
+            including the courses {currentlyLearning.courses.join(' and ')}.
+          </p>
+
+          <h3 className="mt-6 font-mono text-xs uppercase tracking-wide text-accent">
+            Certificates
+          </h3>
+          <ul className="mt-3 flex flex-col gap-1.5">
+            {certificates.map((cert) => (
+              <li key={cert.href}>
+                <a
+                  href={cert.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sm text-primary hover:underline"
+                >
+                  {cert.issuer} certificate →
+                </a>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
       </section>
     </main>
   );

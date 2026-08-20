@@ -2,8 +2,14 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { contactLinks } from '../../content/about';
 import { profile } from '../../content/profile';
+
+const SOCIAL_ICONS = {
+  github: FaGithub,
+  linkedin: FaLinkedin,
+} as const;
 
 // Ticket 07: minimal footer on content pages only — never on home, so the
 // 3D scene stays full-bleed.
@@ -22,17 +28,21 @@ export function SiteFooter() {
           © {new Date().getFullYear()} {profile.name}
         </p>
         <div className="flex items-center gap-4">
-          {socials.map((link) => (
-            <a
-              key={link.type}
-              href={link.href}
-              target="_blank"
-              rel="noreferrer"
-              className="transition-colors hover:text-foreground"
-            >
-              {link.label}
-            </a>
-          ))}
+          {socials.map((link) => {
+            const Icon = SOCIAL_ICONS[link.type as keyof typeof SOCIAL_ICONS];
+            return (
+              <a
+                key={link.type}
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={link.label}
+                className="transition-colors hover:text-foreground"
+              >
+                <Icon className="h-4 w-4" />
+              </a>
+            );
+          })}
           <Link
             href={profile.resumeUrl}
             className="transition-colors hover:text-foreground"

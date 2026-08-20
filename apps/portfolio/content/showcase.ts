@@ -1,6 +1,7 @@
 // Free-form content per ticket 07 — deliberately not a new typed array in
 // content/types.ts, closer to content/projects/*.mdx's free-form pattern
-// than to CareerEntry/SkillCategory. Powers the Showcase page only.
+// than to CareerEntry/SkillCategory. personalProjects powers the Showcase
+// page; currentlyLearning/certificates power the Skills page.
 
 export type PersonalProject = {
   id: string;

@@ -25,7 +25,7 @@ export function CareerCard({
   index: number;
   caseStudyTitles: Record<string, string>;
 }) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(index === 0);
   const logo = COMPANY_LOGOS[entry.id];
 
   return (

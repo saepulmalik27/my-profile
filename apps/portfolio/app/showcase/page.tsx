@@ -2,16 +2,12 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Reveal } from '../../components/ui/reveal';
 import { profile } from '../../content/profile';
-import {
-  certificates,
-  currentlyLearning,
-  personalProjects,
-} from '../../content/showcase';
+import { personalProjects } from '../../content/showcase';
 import { getCaseStudies } from '../../lib/get-case-studies';
 import { defaultOpenGraph, defaultTwitter } from '../../lib/seo';
 
 const showcaseDescription =
-  'Case studies worth a closer look, personal projects, and what I’m currently learning.';
+  'Case studies worth a closer look, plus personal projects.';
 
 export const metadata: Metadata = {
   title: 'Showcase',
@@ -43,8 +39,7 @@ export default async function ShowcasePage() {
           What I&apos;ve built, and what&apos;s next.
         </h1>
         <p className="mt-4 text-foreground/70">
-          Case studies from paid work, personal projects, and what I&apos;m
-          currently learning.
+          Case studies from paid work, plus personal projects.
         </p>
       </header>
 
@@ -84,7 +79,7 @@ export default async function ShowcasePage() {
         </div>
       </section>
 
-      <section className="mb-16">
+      <section>
         <h2 className="mb-6 font-display text-2xl font-semibold text-foreground">
           Personal projects
         </h2>
@@ -128,49 +123,6 @@ export default async function ShowcasePage() {
             </Reveal>
           ))}
         </div>
-      </section>
-
-      <section>
-        <h2 className="mb-6 font-display text-2xl font-semibold text-foreground">
-          Currently learning
-        </h2>
-        <Reveal className="rounded-lg border border-border bg-card p-5">
-          <div className="flex flex-wrap gap-2">
-            {currentlyLearning.topics.map((topic) => (
-              <span
-                key={topic}
-                className="rounded-md border border-border bg-secondary/40 px-2.5 py-1 font-mono text-xs text-foreground/80"
-              >
-                {topic}
-              </span>
-            ))}
-          </div>
-          <p className="mt-4 text-sm text-foreground/70">
-            {currentlyLearning.why}
-          </p>
-          <p className="mt-2 text-sm text-foreground/70">
-            {currentlyLearning.how} Underway since {currentlyLearning.since},
-            including the courses {currentlyLearning.courses.join(' and ')}.
-          </p>
-
-          <h3 className="mt-6 font-mono text-xs uppercase tracking-wide text-accent">
-            Certificates
-          </h3>
-          <ul className="mt-3 flex flex-col gap-1.5">
-            {certificates.map((cert) => (
-              <li key={cert.href}>
-                <a
-                  href={cert.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-sm text-primary hover:underline"
-                >
-                  {cert.issuer} certificate →
-                </a>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
       </section>
     </main>
   );
