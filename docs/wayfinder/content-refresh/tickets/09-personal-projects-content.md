@@ -2,9 +2,9 @@
 id: '09'
 title: 'Capture Personal Projects content'
 type: grilling
-status: open
-assignee: null
-blocked_by: ['07']
+status: closed
+assignee: saepulalmalik@gmail.com
+blocked_by: []
 ---
 
 ## Question
@@ -15,3 +15,11 @@ Using the placement decided in ticket 07 ("Decide site IA placement for Currentl
 - For each: what problem was it solving or what was it exploring, what's the stack, is it live/deployed anywhere, is the repo public on `github.com/saepulmalik27`?
 - This directly closes the `docs/recruiter-feedback.md` gap ("GitHub is linked but shows no evidence of what's there") — for each project, is there something concrete a recruiter could click into (live URL, public repo, demo video)? If a project isn't public, is it worth making public for this purpose, or excluded from the list?
 - Any personal projects abandoned/incomplete that are still worth mentioning for what was learned, vs. ones not worth surfacing at all?
+
+## Answer
+
+**Project 1 — AI chatbot:** Started as a chat interface integrated with RAG and LangChain; evolved to add STT/TTS; currently exploring realtime voice as the next iteration. Repo is private — kept private specifically because it involves AI credit usage (cost/API-key exposure concern). Site copy should use a placeholder GitHub link for now, to be swapped for the real repo URL later per ticket 07's decision.
+
+**Project 2 — this portfolio site itself:** Confirmed in-scope as a personal-project entry — the 3D scene, the AI chat widget, and this content pipeline all count as legitimate evidence.
+
+**Abandoned/incomplete projects:** None to list.

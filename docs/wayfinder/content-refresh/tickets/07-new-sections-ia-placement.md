@@ -2,8 +2,8 @@
 id: '07'
 title: 'Decide site IA placement for Currently Learning / Personal Projects / Courses'
 type: grilling
-status: open
-assignee: null
+status: closed
+assignee: saepulalmalik@gmail.com
 blocked_by: []
 ---
 
@@ -17,3 +17,13 @@ None of "Currently Learning," "Personal Projects," or "Courses" exist in `conten
 - Is Courses collapsed into "Currently Learning" (a course in progress is a form of currently-learning) with a separate list only for _completed_ courses/certifications, or are these three genuinely distinct lists?
 
 Use `/domain-modeling` if the shape isn't obvious after a first pass — this is the one ticket in this map that's partly a schema decision, not pure content capture.
+
+## Answer
+
+**Placement:** The current single `/skills` route ("Skills & Showcase," combining the skill list and case-study grid) splits into two dedicated pages — Skills, and a new Showcase page. Currently Learning, Personal Projects, and Courses all live on the new Showcase page. **This is a page-IA change** — confirmed explicitly with the user (via AskUserQuestion) since it falls outside what the map's "Out of scope" section says was already locked by the closed Portfolio Revamp map. Recorded as a scope-widening event in map Notes.
+
+**Personal Projects / GitHub evidence gap:** Provide an empty/placeholder link slot for each project, to be filled in later with the real repo URL — not blocked on repos being public right now.
+
+**Data shape:** Free-form content, not a new typed array in `content/types.ts` — closer to the existing `content/projects/*.mdx` case-study pattern than to `CareerEntry`/`SkillCategory`.
+
+**Courses vs. Currently Learning:** Merged — Courses folds into Currently Learning rather than staying a fully distinct list.
