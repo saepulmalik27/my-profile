@@ -1,0 +1,39 @@
+---
+title: 'AI Call-Center Agent Copilot'
+company: 'PT Inspigo Inovasi Indonesia'
+period: '2021–Present'
+summary: 'Real-time transcription and a live checklist that guide call-center agents mid-call, then auto-score every session against a rubric.'
+tags: ['OpenAI', 'Real-Time Transcription', 'RAG']
+---
+
+## Problem
+
+Prior QA only sampled a fraction of agent–customer calls for
+manual review — roughly 10 out of every 100 sessions across all ~11
+agents — leaving most calls unchecked. The product team wanted agents
+guided in the moment, not just graded after the fact.
+
+## Architecture
+
+Live calls are transcribed with OpenAI's real-time transcription model.
+Per-case knowledge — what should be asked or checked for a given call
+type — is stored in a data table and pulled in by the AI to drive both
+the live checklist and the post-call evaluation, rather than relying on
+one generic prompt for every call type.
+
+## Execution
+
+Built jointly with 2 people from the product team, whose idea it was.
+Two hard problems stood out: transcription accuracy, particularly
+separating the agent's voice from the customer's amid background noise,
+and getting the AI's rubric-based scoring to land close enough to a
+human QA reviewer — some subjective rubric dimensions still carry a
+scoring margin of error above 5.
+
+![AI call-center copilot](/project/automation/copilot.png)
+
+## Impact
+
+Moved QA coverage from a ~10% manual sample to 100% of sessions scored
+automatically, across all ~11 agents. Still testing-scale as a proof of
+concept, not yet rolled out product-wide.

@@ -1,0 +1,36 @@
+---
+title: 'Trucking Management Application'
+company: 'PT Praweda Sarana Informatika'
+period: '2018–2021'
+summary: 'A GPS fleet-tracking system for management oversight — route adherence, parking dwell time, and cost-throttled location updates.'
+tags: ['PHP', 'Vue.js', 'GPS Tracking']
+---
+
+## Problem
+
+Before this system, supervisors had no real-time visibility into fleet
+behavior — no way to check whether drivers followed their assigned
+routes, how long a truck sat parked at a given location, or which route
+was actually taken on a given trip.
+
+## Architecture
+
+A device → server → UI pipeline built for management oversight, not
+driver-facing tooling. This was maintenance work on an existing, very
+old legacy codebase — not a greenfield build.
+
+## Execution
+
+Three hard problems: a legacy codebase that predated the role, map
+rendering performance against a third-party map provider, and a
+deliberate cost tradeoff — location updates were throttled to a fixed
+interval (5 to 15 minutes) rather than continuous tracking, to keep
+data/API costs under control.
+
+## Impact
+
+Gave management route-adherence and dwell-time visibility that didn't
+exist before, without the cost of continuous real-time tracking.
+
+No screenshots or numbers are available — the role ended in 2021 and the
+system is no longer accessible.

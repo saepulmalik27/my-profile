@@ -21,10 +21,18 @@ export type CareerEntry = {
   caseStudySlugs?: string[];
 };
 
+/** 'daily' = daily driver, 'used' = used on real work, 'learning' = actively picking up. */
+export type SkillLevel = 'daily' | 'used' | 'learning';
+
+export type Skill = {
+  name: string;
+  level: SkillLevel;
+};
+
 export type SkillCategory = {
   id: string;
   name: string;
-  skills: string[];
+  skills: Skill[];
 };
 
 export type AboutMilestone = {

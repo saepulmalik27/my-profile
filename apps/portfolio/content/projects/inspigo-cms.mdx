@@ -1,0 +1,42 @@
+---
+title: 'Content Management System (Forms & Media)'
+company: 'PT Inspigo Inovasi Indonesia'
+period: '2021–Present'
+summary: 'A full-CRUD CMS spanning every Inspigo content type — podcasts, video, IFB config, learning paths, roleplay content, and payments.'
+tags: ['React Hook Form', 'Zod', 'shadcn', 'TanStack Table']
+---
+
+## Problem
+
+Before this CMS, updating product content meant going through
+engineering — no self-serve path existed for non-technical teams to
+manage podcast audio, video, learning paths, AI roleplay content,
+payment/voucher/credit data, or [Inspigo For Business](/projects/inspigo-for-business)'s
+dynamic UI config.
+
+## Architecture
+
+Built with React Hook Form + shadcn + Zod for forms, and TanStack Table
+for list/table views — full CRUD across every content type listed
+above.
+
+## Execution
+
+Built with a team, not solo. The hard problem was consuming many
+different backend services, each with its own error and response
+shape — validation and error handling had to normalize across
+inconsistent formats service by service rather than assuming one
+consistent API contract.
+
+![CMS overview](/project/cms/cms.png)
+
+![CMS drag-and-drop form builder](/project/cms/drag-n-drop-form.png)
+
+![CMS form view](/project/cms/form.png)
+
+![CMS table view](/project/cms/table.png)
+
+## Impact
+
+Other Inspigo teams now self-serve product content updates directly
+through the CMS instead of routing every change through engineering.

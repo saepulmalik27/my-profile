@@ -8,28 +8,38 @@ tags: ['Next.js', 'React', 'Design Systems', 'State Management']
 
 ## Problem
 
-Inspigo For Business (IFB) serves multiple enterprise clients, each wanting
-the platform to reflect their own branding and content structure.
-Hardcoding a UI variant per client doesn't scale past the first few — every
-new enterprise deal would mean another bespoke build.
+Before this system existed, per-client customization was hardcoded — a
+separate build or branch per enterprise deal. That got heavy fast once
+several clients signed in a short window, each wanting revisions on top
+of their own hardcoded variant: no shared system, so every client's
+change was isolated, repeated work.
 
 ## Architecture
 
 The platform is built on Next.js and React, with branding and layout
-treated as configuration data rather than code paths. A component library
-reads per-tenant configuration and renders accordingly — colors,
-copy, and structure adjust based on data, not a forked codebase.
+treated as configuration data rather than code paths. The hard part
+wasn't theming — colors and copy are the easy 80%. The real architecture
+problem was that config also has to drive component _composition and
+layout_: which components render and how they're arranged per tenant,
+not just how they're styled.
 
 ## Execution
 
-The customization layer covers the pieces enterprise clients actually
-care about seeing reflected back at them: branding, content
-organization, and layout adjustments — all driven by state management
-patterns that keep per-tenant configuration isolated and predictable as
-the number of clients grows.
+Designed and built the config-driven architecture from scratch, working
+as a two-person team (frontend lead + one backend engineer). The
+customization layer covers what enterprise clients actually care about
+seeing reflected back at them — branding, content organization, and
+structural layout adjustments — all resolved from per-tenant
+configuration data.
+
+![IFB dynamic UI configuration](/project/ifb/ifb-dyanmic-ui.png)
+
+![IFB per-tenant layout](/project/ifb/ifb-dynamic-ui-2.png)
 
 ## Impact
 
 New enterprise clients can be onboarded through configuration rather
 than a dedicated development cycle per client — the platform scales with
-the sales pipeline instead of the engineering roadmap.
+the sales pipeline instead of the engineering roadmap. Now running
+~350 client organizations, averaging ~100 users each (~35,000 end users
+total).

@@ -15,22 +15,33 @@ the platform actually teaches.
 
 ## Architecture
 
-Inspigo AI integrates Foundation Models (OpenAI, AWS Bedrock) behind a
-Retrieval-Augmented Generation pipeline. Instead of relying on the
-model's general knowledge alone, responses are grounded in retrieved
-content from the platform itself before generation happens.
+Source documents are uploaded through the [Inspigo CMS](/projects/inspigo-cms),
+stored in S3, and ingested into **Pinecone** as the vector store —
+Pinecone handles chunking and metadata, with embeddings generated via
+OpenAI's embedding models. At generation time, retrieved chunks are
+injected into the prompt before the model responds. **OpenAI** is the
+primary model, with **AWS Bedrock as a fallback**.
 
 ## Execution
 
-The frontend work centered on the chat experience: handling real-time
-streaming responses token by token, and managing the perceived latency
-between a user's question and the first visible piece of an answer —
-the gap between "the model is thinking" and "the model is already
-answering."
+Owned the frontend/streaming UX end to end, plus the CMS interface used
+to upload and manage source documents. Streaming shipped first over
+**WebSocket** (still powering some legacy roleplay features), with newer
+flows moved to **SSE**. The main hard problem was scaling the streaming
+layer under concurrent load — getting real-time token-by-token responses
+to hold up as usage grew, alongside getting markdown rendering fully
+correct in the chat UI.
+
+![Inspigo AI chat conversation](/project/inspigo-ai/chat-conversation.png)
+
+![Inspigo AI roleplay detail](/project/inspigo-ai/roleplay-detail.png)
+
+![Inspigo AI evaluation](/project/inspigo-ai/evaluation.png)
 
 ## Impact
 
 The result reads less like a search box and more like a conversation —
 answers stream in immediately and stay grounded in Inspigo's own
 learning content rather than drifting into generic, ungrounded
-responses.
+responses. Built with a 5-person team; peak usage reaches thousands of
+conversations per day.

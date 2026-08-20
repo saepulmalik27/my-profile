@@ -1,0 +1,35 @@
+---
+title: 'CI/CD Pipelines (GitHub Actions)'
+company: 'PT Inspigo Inovasi Indonesia'
+period: '2021–Present'
+summary: 'Security audit, typecheck/test, and build+deploy pipelines, scoped to the production branch and version tags rather than every push.'
+tags: ['GitHub Actions', 'CI/CD']
+---
+
+## Problem
+
+No CI existed at Inspigo before this — deploys meant SSHing into the
+server and running `pm2` commands by hand, with no automated audit or
+test step in between.
+
+## Architecture
+
+Three pipelines: security audit (shared with the
+[pentest automation workflow](/projects/inspigo-pentest-automation)),
+typecheck & test, and build + deploy. Deliberately scoped to run only on
+the production branch and when a version tag is cut, not on every push —
+keeping CI runs tied to what's actually about to ship.
+
+## Execution
+
+Built solo, working through the pipeline design by brainstorming with
+AI. Still only a handful of projects have CI set up, so this remains a
+partial rollout rather than an org-wide standard.
+
+## Impact
+
+Deploys became push-to-repo automated instead of manual server SSH
+work, with faster builds and, for serverless targets, audit/test steps
+running automatically as part of the same pipeline. No dedicated
+screenshot exists yet for the typecheck/build+deploy pipeline itself —
+open follow-up if one becomes available.

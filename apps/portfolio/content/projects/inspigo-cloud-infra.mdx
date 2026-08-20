@@ -1,0 +1,38 @@
+---
+title: 'Cloud Infrastructure: S3 Media, Amplify, and the Vercel-to-Amplify Migration'
+company: 'PT Inspigo Inovasi Indonesia'
+period: '2021–Present'
+summary: 'Presigned-URL S3 media upload with a Lambda image optimizer, and hosting migrated from Vercel to AWS Amplify.'
+tags: ['AWS S3', 'AWS Amplify', 'AWS Lambda', 'Vercel']
+---
+
+## Problem
+
+Media was previously handled without a dedicated pipeline for
+organization or optimization, and all projects were originally hosted
+on Vercel before a collective decision — driven jointly by the
+engineering manager and the team — to migrate to Amplify.
+
+## Architecture
+
+Media uploads flow two ways: directly from the browser to S3 via
+presigned URLs, and through a backend-proxied path that runs images
+through a Lambda-based converter/optimizer before storage. Amplify now
+handles hosting and deployment for all migrated projects.
+
+## Execution
+
+Not solo work — a collective initiative across the team. The hard
+tradeoff surfaced by the migration: Amplify deploys take 6–10 minutes
+with manual cache management, noticeably slower than Vercel's automatic
+caching.
+
+![S3 media pipeline](/project/aws/s3-aws.png)
+
+![Amplify deploy dashboard](/project/aws/amplify-deploy-dashboard.png)
+
+## Impact
+
+Media is now organized in S3 rather than stored directly in the
+database — a cleaner separation that also makes image optimization
+easier to apply going forward.

@@ -13,7 +13,8 @@ import { profile } from '../../content/profile';
 const NAV_LINKS = [
   { href: '/', label: 'Home' },
   { href: '/career', label: 'Career' },
-  { href: '/skills', label: 'Skills & Showcase' },
+  { href: '/skills', label: 'Skills' },
+  { href: '/showcase', label: 'Showcase' },
   { href: '/about', label: 'About & Contact' },
 ];
 

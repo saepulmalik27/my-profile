@@ -1,0 +1,39 @@
+---
+title: 'Video Player (HLS, Adaptive Streaming)'
+company: 'PT Inspigo Inovasi Indonesia'
+period: '2021–Present'
+summary: 'A shared video player wrapping react-player with HLS adaptive streaming, reused across Inspigo For Business, Inspigo AI, and every video piece of content.'
+tags: ['react-player', 'HLS', 'Video Streaming']
+---
+
+## Problem
+
+Video playback needed to work reliably across every Inspigo platform
+that serves video content, with adaptive streaming rather than a single
+fixed bitrate.
+
+## Architecture
+
+Wraps `react-player` rather than building a player from scratch, with
+HLS adaptive streaming, playback speed control, and video quality
+control layered on top.
+
+## Execution
+
+Took over an existing implementation from a legacy developer rather
+than building it greenfield. The hard problem at the outset was wiring
+analytics into the player — getting accurate playback events out of a
+wrapped third-party component wasn't straightforward.
+
+![Video player controls](/project/video-player/control-video-player.png)
+
+![Video player on Inspigo For Business](/project/video-player/video-player-on-ifb.png)
+
+![Video player](/project/video-player/video-player.png)
+
+## Impact
+
+Now a shared module reused across multiple Inspigo platforms — including
+[Inspigo For Business](/projects/inspigo-for-business) and
+[Inspigo AI](/projects/inspigo-ai) — and powers every video piece of
+content on the platform.

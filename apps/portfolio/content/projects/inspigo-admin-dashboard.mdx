@@ -1,0 +1,35 @@
+---
+title: 'Admin Dashboard (Member & Org Management, Stats)'
+company: 'PT Inspigo Inovasi Indonesia'
+period: '2021–Present'
+summary: 'A client-facing admin panel for member/org management, statistics, and a learning-path module, built on React Hook Form, Zod, and Recharts.'
+tags: ['Recharts', 'React Hook Form', 'Zod']
+---
+
+## Problem
+
+Client organizations on Inspigo had no dedicated admin tooling —
+member management, org management, statistics, and learning-path
+configuration had no self-serve panel of their own.
+
+## Architecture
+
+A custom admin panel combining CRUD (member/org management, learning
+paths) with reporting (member statistics), built on React Hook Form +
+Zod for forms and Recharts for the stats views.
+
+## Execution
+
+Built with the product team plus a dedicated backend engineer; owned
+the frontend. The hard problem was permissions — the backend's
+authorization model attaches a scope system to the JWT token rather
+than exposing a simple role table, so access control had to be modeled
+around scopes rather than fixed roles.
+
+![Admin dashboard](/project/admin-dashboard/admin-dashboard.png)
+
+## Impact
+
+Went from no admin tooling to near-universal adoption — almost every
+client organization on Inspigo now uses it, typically with ~2 admins
+per org.

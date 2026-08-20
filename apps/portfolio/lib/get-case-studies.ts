@@ -9,7 +9,19 @@ import path from 'path';
 export const CASE_STUDY_SLUGS = [
   'inspigo-for-business',
   'inspigo-ai',
-  'shipyard-trucking',
+  'inspigo-pentest-automation',
+  'inspigo-ai-callcenter-copilot',
+  'inspigo-cicd',
+  'inspigo-storybook',
+  'inspigo-cloud-infra',
+  'inspigo-cms',
+  'inspigo-admin-dashboard',
+  'inspigo-video-player',
+  'inspigo-analytics-tracking',
+  'inspigo-seo',
+  'inspigo-realtime-chat',
+  'praweda-shipyard',
+  'praweda-trucking',
 ] as const;
 
 export type CaseStudySummary = {

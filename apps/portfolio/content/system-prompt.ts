@@ -21,7 +21,10 @@ export function buildSystemPrompt(): string {
     .join('\n');
 
   const skillsText = skillCategories
-    .map((category) => `- ${category.name}: ${category.skills.join(', ')}`)
+    .map(
+      (category) =>
+        `- ${category.name}: ${category.skills.map((s) => s.name).join(', ')}`
+    )
     .join('\n');
 
   return `
