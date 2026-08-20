@@ -2,8 +2,8 @@
 id: '01'
 title: 'Inspigo For Business: capture project detail, challenges, and problems solved'
 type: grilling
-status: open
-assignee: null
+status: closed
+assignee: saepulalmalik@gmail.com
 blocked_by: []
 ---
 
@@ -16,3 +16,15 @@ Deepen the existing `content/projects/inspigo-for-business.mdx` case study (curr
 - What was your specific role and ownership boundary on this project (sole owner of a piece, part of a team, who else was involved)?
 - Any numbers: how many enterprise clients onboarded through this system, roughly how much faster/cheaper an onboarding became vs. the old way, team size, timeline?
 - Is there anything screenshot-able or demo-able for this project (even blurred/anonymized), or is it fully NDA'd with zero visual evidence possible?
+
+## Answer
+
+**Before state:** Customization was hardcoded per client — a separate build/branch per enterprise deal. This got heavy fast once several clients signed in a short window, each wanting revisions on top of their own hardcoded variant — no shared system, so every client's change was isolated, repeated work.
+
+**Hard problem:** The config-driven layer doesn't stop at colors/copy — it also drives component _composition/layout_, i.e. which components render and how they're arranged per tenant, not just theming. That's the part that made it a real architecture problem rather than a CSS-variables exercise: config has to describe structure, not just style.
+
+**Ownership:** Designed and built the config-driven architecture from scratch, working with one backend engineer (2-person team: FE lead + 1 BE).
+
+**Numbers:** ~350 client organizations on the platform, averaging ~100 users per client (~35,000 end users total).
+
+**Evidence:** Screenshots available — `apps/portfolio/public/project/ifb/ifb-dyanmic-ui.png` and `ifb-dynamic-ui-2.png`.

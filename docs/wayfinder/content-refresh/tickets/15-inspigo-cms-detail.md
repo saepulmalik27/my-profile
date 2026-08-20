@@ -3,7 +3,7 @@ id: '15'
 title: 'Inspigo — CMS (forms, media upload): capture project detail, challenges, and problems solved'
 type: grilling
 status: open
-assignee: null
+assignee: saepulalmalik@gmail.com
 blocked_by: []
 ---
 

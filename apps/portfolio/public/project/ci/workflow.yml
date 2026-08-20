@@ -1,0 +1,84 @@
+name: Weekly Security Audit
+
+on:
+  schedule:
+    # Berjalan setiap hari Minggu jam 00:00 UTC
+    - cron: '0 0 * * 0'
+  workflow_dispatch: # Memungkinkan trigger manual
+
+jobs:
+  security-audit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup NPM Auth Token
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+
+      - name: Install Dependencies
+        # Membatasi instalasi HANYA pada business.inspigo.id dan dependensinya (jauh lebih cepat)
+        run: pnpm install --filter business.inspigo.id... --frozen-lockfile
+
+      - name: Run SCA (pnpm audit)
+        # Menggunakan || true agar pipeline tidak gagal jika ada vulnerability
+        run: pnpm --filter business.inspigo.id audit --json > sca-report.json || true
+
+      - name: Run SAST (Semgrep)
+        # Menjalankan semgrep via docker atau python pip, contoh menggunakan action resmi
+        run: |
+          python -m pip install semgrep
+          semgrep scan --config auto apps/business.inspigo.id --json > sast-report.json || true
+
+      - name: Run DAST (Nuclei)
+        uses: projectdiscovery/nuclei-action@v3
+        with:
+          target: https://business.inspigo.id
+        continue-on-error: true
+
+      - name: Rename Nuclei Report
+        run: mv nuclei.json nuclei-report.json || touch nuclei-report.json
+
+      - name: Prep ZAP Report File
+        run: touch zap-report.json && chmod 777 zap-report.json
+
+      - name: Run DAST (OWASP ZAP Baseline)
+        uses: zaproxy/action-baseline@v0.12.0
+        with:
+          target: 'https://business.inspigo.id'
+          cmd_options: '-J zap-report.json'
+        continue-on-error: true
+
+      - name: Upload Raw Reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: raw-security-reports
+          path: |
+            sca-report.json
+            sast-report.json
+            nuclei-report.json
+            zap-report.json
+
+      - name: Send JSONs to n8n Webhook
+        run: |
+          # Memastikan file ada dan berbentuk JSON valid meskipun scanner tidak menghasilkan output 
+          # (hal ini mencegah error curl: 26 Failed to open/read local data)
+          for f in sca-report.json sast-report.json nuclei-report.json zap-report.json; do
+            if [ ! -f "$f" ] || [ ! -s "$f" ]; then echo "{}" > "$f"; fi
+          done
+
+          curl -X POST "${{ secrets.N8N_WEBHOOK_URL }}" \
+            -F "sca=@sca-report.json" \
+            -F "sast=@sast-report.json" \
+            -F "nuclei=@nuclei-report.json" \
+            -F "zap=@zap-report.json"
+        continue-on-error: true
