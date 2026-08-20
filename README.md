@@ -2,6 +2,13 @@
 
 Welcome to the source code for my personal portfolio! This project is structured as a monorepo using [Turborepo](https://turbo.build/) and [pnpm](https://pnpm.io/).
 
+## Features & Highlights
+
+- **Interactive 3D Home Scene:** A fully walkable bedroom built with React Three Fiber, featuring interactive objects (like a monitor that reveals the rest of the site) and a distinct "Two Lights" visual theme.
+- **AI Chatbot Widget:** A persistent, site-wide floating assistant powered by the Vercel AI SDK (DeepSeek). It's grounded in the site's own structured content to answer questions about my experience and skills.
+- **Unified Content Model:** Work history, skills, and about-me prose are managed as structured TypeScript files in `apps/portfolio/content/`, while project case studies are written in MDX. This data drives both the UI and the AI chatbot's system prompt.
+- **Wayfinder Maps:** Project architecture and content decisions are transparently documented using local markdown maps located in `docs/wayfinder/`.
+
 ## Tech Stack
 
 - **Framework:** [Next.js](https://nextjs.org/) (App Router, React 19)
@@ -17,8 +24,8 @@ Welcome to the source code for my personal portfolio! This project is structured
 This monorepo includes the following apps and packages:
 
 ### Apps
-- `apps/portfolio`: The main Next.js portfolio application.
-- `apps/storybook`: UI component documentation and testing environment.
+- `apps/portfolio`: The main Next.js portfolio application containing the 3D scene, content engine, and AI integration.
+- `apps/storybook`: UI component documentation and testing environment for shared components.
 
 ### Packages
 - `packages/ui`: A shared React UI component library.
