@@ -35,7 +35,7 @@ export function SiteNav() {
         <Link
           href="/"
           onClick={() => setDrawerOpen(false)}
-          className="flex items-center gap-2 font-mono text-sm text-foreground"
+          className="flex items-center gap-2 font-mono font-bold text-sm text-foreground"
         >
           <Image
             src="/assets/logo/logo.png"
@@ -44,7 +44,7 @@ export function SiteNav() {
             height={28}
             className="rounded-full"
           />
-          SAEPUL MALIK
+          Saepul Malik
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">
