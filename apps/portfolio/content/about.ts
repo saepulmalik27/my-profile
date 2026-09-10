@@ -39,8 +39,8 @@ export const contactLinks: ContactLink[] = [
   },
   {
     type: 'phone',
-    label: '+62 852-7334-546',
-    href: 'tel:+628527334546',
+    label: '+62 895-2733-4546',
+    href: 'tel:+6289527334546',
   },
   {
     type: 'linkedin',
