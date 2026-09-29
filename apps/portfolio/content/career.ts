@@ -10,13 +10,14 @@ export const career: CareerEntry[] = [
     startDate: '2021',
     endDate: 'Present',
     topHighlight:
-      'Built and maintained high-performance web applications using Next.js and React.',
+      'Owned Inspigo For Business as frontend lead — a config-driven enterprise learning platform serving ~350 client organizations.',
     achievements: [
       'Built and maintained high-performance web applications using Next.js and React.',
       "Translated Figma designs into pixel-accurate, production-ready UI across Inspigo's products.",
-      'Created customizable learning platforms for enterprise clients with dynamic UI adjustments — Inspigo For Business (IFB).',
+      'Owned Inspigo For Business (IFB) as frontend lead: designed a config-driven architecture where per-tenant config drives component composition and layout, so enterprise clients onboard through configuration instead of a dedicated build — now ~350 client organizations (~35,000 users).',
       'Built a reusable form system powering the CMS and readable, non-technical-friendly charts for the admin dashboard.',
-      'Integrated AI-powered features using Foundation Models (OpenAI, Bedrock) and RAG for personalized learning experiences — Inspigo AI.',
+      'Built the frontend for Inspigo AI, a RAG-powered learning assistant: the token-by-token streaming chat UI (WebSocket, later SSE) and the CMS for managing knowledge-base documents, integrated with the backend OpenAI/Bedrock + Pinecone pipeline.',
+      'Built the AI call-center QA copilot end to end — live-call probing, real-time call analysis, and rubric-based QA evaluation — moving QA coverage from a ~10% manual sample to 100% of sessions scored automatically.',
     ],
     techTags: [
       'Next.js',

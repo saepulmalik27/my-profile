@@ -17,7 +17,7 @@ saepulalmalik@gmail.com · +6289527334546 · www.saepulmalik.my.id
 Frontend Engineer with 8 years of software engineering experience: 3 years
 full-stack (PHP, Vue.js, PostgreSQL) followed by 5 focused on React/Next.js
 and AI-integrated web applications. Designs config-driven UI architecture and
-reusable systems (forms, charts, RAG pipelines) for enterprise products,
+reusable systems (forms, charts, AI chat interfaces) for enterprise products,
 combining an analytical background (Physics) with hands-on ownership of
 platforms serving tens of thousands of users.
 
@@ -25,16 +25,20 @@ platforms serving tens of thousands of users.
 
 **Frontend Engineer | PT Inspigo Inovasi Indonesia (2021 – Present)**
 
-- Designed and built a config-driven UI architecture — driving per-tenant
-  component composition and layout, not just theming — for Inspigo For
-  Business, now serving ~350 enterprise clients (~35,000 end users).
-- Built Inspigo AI's RAG pipeline (S3 → Pinecone, OpenAI + Bedrock fallback)
-  and owned the streaming chat UX, serving thousands of conversations/day at
-  peak on a 5-person team.
+- Owned Inspigo For Business (IFB) as frontend lead: designed and built a
+  config-driven UI architecture — driving per-tenant component composition
+  and layout, not just theming — so enterprise clients onboard through
+  configuration instead of a dedicated build; now serving ~350 enterprise
+  clients (~35,000 end users).
+- Built the frontend for Inspigo AI's RAG-powered assistant — streaming chat
+  UI (WebSocket, later SSE) and the CMS for managing knowledge-base
+  documents — integrated with the backend OpenAI/Bedrock + Pinecone
+  pipeline; thousands of conversations/day at peak.
 - Built a reusable form system (React Hook Form + Zod) powering the CMS
   across every Inspigo content type, and the admin dashboard's chart/reporting
   layer (Recharts) — both now used by nearly every client organization.
-- Built an AI call-center QA copilot (real-time transcription + rubric-based
+- Built an AI call-center QA copilot end to end — live-call probing, live
+  analysis, and QA evaluation (real-time transcription + rubric-based
   auto-evaluation) covering all support agents, automating 100% of session
   scoring versus ~10% manual sampling previously.
 - Stood up CI/CD (GitHub Actions) and weekly automated security scanning
