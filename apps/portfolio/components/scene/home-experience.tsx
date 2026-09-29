@@ -2,6 +2,7 @@
 
 import { Lightbulb } from 'lucide-react';
 import { useCallback, useState } from 'react';
+import { profile } from '../../content/profile';
 import { useSceneEngagement } from '../nav/scene-engagement';
 import type { AvatarPose } from './avatar';
 import { RoomSceneLoader } from './room-scene-loader';
@@ -72,14 +73,13 @@ export function HomeExperience() {
           container, so "Saepul Malik" lines up with the nav logo above it. */}
       <div className="pointer-events-none relative z-10 mx-auto flex h-full max-w-6xl flex-col items-start justify-end gap-3 px-6 pb-16 md:px-10 md:pb-24">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
-          Saepul Malik
+          {profile.name}
         </h1>
         <h3 className="text-lg md:text-xl italic font-medium text-amber-500 shadow">
-          Frontend Engineer
+          {profile.role}
         </h3>
         <p className="max-w-xl text-base md:text-lg text-white/70 drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
-          Senior Frontend Engineer bridging the gap between analytical Physics
-          and cutting-edge web development.
+          {profile.tagline}
         </p>
 
         {/* Sitting in the chair is the primary interaction (ticket 05) — it
@@ -88,8 +88,8 @@ export function HomeExperience() {
           <div className="pointer-events-auto mt-2 max-w-xl rounded-lg border border-white/15 bg-black/40 p-4 backdrop-blur-sm">
             <p className="mb-3 text-sm text-white/80">
               8 years bridging Physics, full-stack foundations, and a
-              frontend/AI specialization — building enterprise-grade interfaces
-              with React, Next.js, and RAG-powered AI features.
+              frontend/AI specialization — shipping AI-integrated interfaces,
+              reusable design systems, and cloud-deployed products end to end.
             </p>
             <a
               href="/frontend-engineer.pdf"

@@ -2,7 +2,7 @@
 id: '01'
 title: 'Update home page headline/highlight'
 type: grilling
-status: open
+status: closed
 assignee: saepulalmalik@gmail.com
 blocked_by: []
 ---
@@ -51,4 +51,14 @@ case studies, the LangChain/RTK/Zustand/reusable-form-system work now in
 
 ## Answer
 
-(not yet captured)
+**H1/H3 unchanged** — "Saepul Malik" / "Frontend Engineer" are still accurate identity strings, nothing to refresh there.
+
+**Tagline** trades the pure Physics→Frontend framing for concrete AI/systems signal:
+
+> Senior Frontend Engineer building AI-integrated interfaces and reusable systems for enterprise products.
+
+**Sit-reveal blurb** broadens the highlight reel (no named case studies, no Showcase-page CTA added — the existing Download CV link is enough):
+
+> 8 years bridging Physics, full-stack foundations, and a frontend/AI specialization — shipping AI-integrated interfaces, reusable design systems, and cloud-deployed products end to end.
+
+**Data source:** wire `name`/`role`/`tagline` to `content/profile.ts` (already has the exact shape needed, no schema change) so the hero and CV/nav can't drift apart again. The sit-reveal blurb stays hardcoded in `home-experience.tsx` — it has no existing counterpart in any content file (nothing else duplicates it, so no drift risk), and it matches this component's ticket-04 "always-present semantic HTML" pattern. This is a deliberate split, not an oversight: identity fields (name/role/tagline) are shared with the CV/nav and get a single source of truth; the longer narrative blurb is presentation-only for this one component.

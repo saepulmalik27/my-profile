@@ -71,12 +71,13 @@ for real 3D assets.
 
 ## Decisions so far
 
-(none yet — grilling not started)
+- [Update home page headline/highlight](tickets/01-home-headline-refresh.md) — H1/H3 unchanged; tagline now leads with AI-integration/reusable-systems signal instead of pure Physics framing; sit-reveal blurb broadens the highlight reel without naming specific case studies or adding a Showcase-page CTA. `name`/`role`/`tagline` now wired to `content/profile.ts` (no schema change needed); the sit-reveal blurb stays hardcoded since nothing else duplicates it.
+- [Update CV content (Markdown draft, then PDF)](tickets/02-cv-content-refresh.md) — 1-page target; 13 Inspigo case studies condensed into themed bullets (Storybook/realtime chat dropped as stale); daily-driver skills subset only; Currently Learning/Personal Projects stay web-only. Draft written to `docs/cv-content.md`, contact/education/photo carried over unchanged from the current PDF. **PDF production still not started** — per this ticket's own scope, waiting on review/approval of the Markdown draft first.
 
 ## Tickets
 
-- [Update home page headline/highlight](tickets/01-home-headline-refresh.md) — open
-- [Update CV content (Markdown draft, then PDF)](tickets/02-cv-content-refresh.md) — open
+- [Update home page headline/highlight](tickets/01-home-headline-refresh.md) — closed
+- [Update CV content (Markdown draft, then PDF)](tickets/02-cv-content-refresh.md) — closed
 - [Replace 3D home scene primitives with real 3D assets](tickets/03-3d-home-real-assets.md) — open
 
 ## Not yet specified

@@ -2,7 +2,7 @@
 id: '02'
 title: 'Update CV content (Markdown draft, then PDF)'
 type: grilling
-status: open
+status: closed
 assignee: saepulalmalik@gmail.com
 blocked_by: []
 ---
@@ -43,7 +43,25 @@ written and reviewed/approved.
 
 ## Answer
 
-(not yet captured)
+- **Structure:** condense the 13 Inspigo case studies into grouped/themed
+  bullets rather than listing each individually — a PDF can't do the site's
+  expandable-card/case-study-link treatment.
+- **Facts included:** broader selection — most case studies with real
+  numbers/impact make the cut (IFB, Inspigo AI, pentest automation, AI
+  call-center copilot, CI/CD, cloud infra, CMS, admin dashboard, SEO,
+  analytics, video player). Skipped: Storybook and realtime chat (both
+  stale/discontinued, weak to lead with on a live pitch doc).
+- **Skills:** daily-driver subset only from `content/skills.ts` (the
+  `level: 'daily'` items across all 5 categories) — full breadth stays on the
+  site's Skills page.
+- **Currently Learning / Personal Projects:** web-only, no CV presence — too
+  in-progress for a print CV.
+- **Page count:** 1 page.
+
+**Deliverable written to `docs/cv-content.md`** — full Markdown draft, ready
+for review. Contact info, education, and photo carried over unchanged from
+the current `frontend-engineer.pdf` (not in any `content/*.ts` file, so
+nothing to reconcile against the content-refresh work).
 
 ## Execution note (once grilled and closed)
 

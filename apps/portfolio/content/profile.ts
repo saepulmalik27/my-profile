@@ -4,6 +4,6 @@ export const profile: Profile = {
   name: 'Saepul Malik',
   role: 'Frontend Engineer',
   tagline:
-    'Senior Frontend Engineer bridging the gap between analytical Physics and cutting-edge web development.',
+    'Frontend Engineer building AI-integrated interfaces and reusable systems for enterprise products.',
   resumeUrl: '/frontend-engineer.pdf',
 };
