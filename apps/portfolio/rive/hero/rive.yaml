@@ -1,0 +1,7 @@
+name: hero
+logs:
+  file: build/rive.log
+  problems: build/problems.log
+push:
+  projectId: 522069
+  fileId: 2618058

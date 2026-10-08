@@ -1,12 +1,12 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import type { AvatarPose } from './avatar';
+import type { AvatarPose } from './hero-rive';
 
-// Client-only: three.js/R3F cannot run during SSR. Per ticket 02/04, this
+// Client-only: the Rive runtime (WASM + canvas) cannot run during SSR. This
 // dynamic(ssr:false) call must live inside a Client Component boundary —
 // Next.js 16 rejects ssr:false directly inside a Server Component.
-const RoomScene = dynamic(() => import('./room-scene'), {
+const RoomScene = dynamic(() => import('./hero-rive'), {
   ssr: false,
   loading: () => <div className="h-full w-full bg-[#12141f]" />,
 });

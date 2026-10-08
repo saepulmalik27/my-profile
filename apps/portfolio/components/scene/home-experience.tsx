@@ -4,10 +4,10 @@ import { Lightbulb } from 'lucide-react';
 import { useCallback, useState } from 'react';
 import { profile } from '../../content/profile';
 import { useSceneEngagement } from '../nav/scene-engagement';
-import type { AvatarPose } from './avatar';
+import type { AvatarPose } from './hero-rive';
 import { RoomSceneLoader } from './room-scene-loader';
 
-// Owns the DOM-side reaction to what happens inside the 3D scene — the
+// Owns the DOM-side reaction to what happens inside the 2D Rive scene — the
 // canvas itself has no idea about hero text or content reveals, it just
 // reports pose changes and "something was clicked" up through here
 // (ticket 05: sitting reveals content, sleeping dims + shows a line, a
@@ -54,7 +54,7 @@ export function HomeExperience() {
       </button>
 
       {/* Sleeping dims the scene (ticket 05) — a CSS overlay is simpler and
-          just as effective as touching WebGL light intensities for this. */}
+          just as effective as another Rive state for this. */}
       <div
         className={`pointer-events-none absolute inset-0 z-[5] bg-black transition-opacity duration-700 motion-reduce:transition-none ${
           pose === 'sleep' ? 'opacity-30' : 'opacity-0'

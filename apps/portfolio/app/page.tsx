@@ -3,7 +3,7 @@ import { HomeExperience } from '../components/scene/home-experience';
 import { profile } from '../content/profile';
 import { defaultOpenGraph, defaultTwitter } from '../lib/seo';
 
-const homeDescription = `${profile.tagline} Explore an interactive 3D room built with Next.js, React Three Fiber, and an AI chat grounded in this site's own content.`;
+const homeDescription = `${profile.tagline} Explore an interactive 2D room animated with Rive, and an AI chat grounded in this site's own content.`;
 
 export const metadata: Metadata = {
   description: homeDescription,
@@ -25,7 +25,7 @@ export default function Page() {
   return (
     <div className="flex flex-col items-center min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
       {/*
-        3D home scene (tickets 01/02/03/05) — room shell, "Two Lights"
+        2D Rive home scene (tickets 01/02/03/05) — room shell, "Two Lights"
         lighting, furniture, avatar + click-to-walk, and the 5 interactions
         (window/light/bed/chair/discovery hint) all live in HomeExperience
         and the components/scene tree it composes. Per ticket 04, the real

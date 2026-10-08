@@ -8,14 +8,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint --max-warnings 0",
-    "check-types": "next typegen && tsc --noEmit"
+    "check-types": "next typegen && tsc --noEmit",
+    "rive:build": "rive rive/hero --once && cp rive/hero/build/hero.riv public/hero.riv"
   },
   "dependencies": {
     "@ai-sdk/deepseek": "^3.0.28",
     "@ai-sdk/react": "^4.0.55",
-    "@react-three/drei": "^10.7.8",
-    "@react-three/fiber": "^9.7.0",
     "@repo/ui": "workspace:*",
+    "@rive-app/react-canvas": "^4.35.0",
     "ai": "^7.0.52",
     "framer-motion": "^12.43.0",
     "gray-matter": "^4.0.3",
@@ -24,8 +24,7 @@
     "next-mdx-remote": "^6.0.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-icons": "^5.7.0",
-    "three": "^0.185.1"
+    "react-icons": "^5.7.0"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
@@ -35,7 +34,6 @@
     "@types/node": "^22.15.3",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
-    "@types/three": "^0.185.4",
     "eslint": "^9.39.1",
     "postcss": "^8.5.25",
     "tailwindcss": "^4.0.0",

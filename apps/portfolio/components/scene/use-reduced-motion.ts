@@ -14,7 +14,7 @@ function getSnapshot() {
   return window.matchMedia(QUERY).matches;
 }
 
-// This hook only ever runs inside the client-only 3D scene (dynamically
+// This hook only ever runs inside the client-only Rive hero scene (dynamically
 // imported with ssr:false), so there's no real SSR snapshot to reconcile —
 // still required by useSyncExternalStore's signature, never exercised.
 function getServerSnapshot() {
