@@ -10,7 +10,8 @@ not part of the content-refresh scope).
 **Saepul Malik** — Frontend Engineer
 
 linkedin.com/in/saepulmalik27 · github.com/saepulmalik27 ·
-saepulalmalik@gmail.com · +6289527334546 · www.saepulmalik.my.id
+saepulalmalik@gmail.com · +62 895-2733-4546 · www.saepulmalik.my.id ·
+Bogor, Indonesia · Open to remote & onsite · 1-month notice
 
 ## Profile
 
