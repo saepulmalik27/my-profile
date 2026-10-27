@@ -10,7 +10,7 @@ export type CareerEntry = {
   endDate: string | 'Present';
   /** Shown when the card is collapsed (ticket 08). */
   topHighlight: string;
-  /** XYZ-format bullets, per docs/cv_content_brainstorm.md. */
+  /** XYZ-format bullets, per docs/cv/cv-content-brainstorm.md. */
   achievements: string[];
   techTags: string[];
   /**

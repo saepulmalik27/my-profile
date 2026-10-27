@@ -1,7 +1,7 @@
 import type { AboutMilestone, ContactLink } from './types';
 
 // Structure and facts fixed by ticket 10 — source of truth:
-// public/frontend-engineer.pdf plus docs/portfolio_website_brainstorm.md's
+// public/frontend-engineer.pdf plus docs/portfolio/website-brainstorm.md's
 // narrative pitch. Final prose polish is separate (map's "Not yet
 // specified" bucket), this is the accurate skeleton it gets built on.
 export const aboutMilestones: AboutMilestone[] = [

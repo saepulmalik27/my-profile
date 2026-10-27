@@ -11,7 +11,7 @@ blocked_by: []
 
 `apps/portfolio/public/frontend-engineer.pdf` (the "Download CV" file linked
 from the nav, the career page, and the home page's sit-reveal) is a static
-binary with no source file in this repo — `docs/cv_content_brainstorm.md` is
+binary with no source file in this repo — `docs/cv/cv-content-brainstorm.md` is
 an old Bahasa Indonesia brainstorm doc, not a maintained CV source, and
 predates the content-refresh work.
 
@@ -58,7 +58,7 @@ written and reviewed/approved.
   in-progress for a print CV.
 - **Page count:** 1 page.
 
-**Deliverable written to `docs/cv-content.md`** — full Markdown draft, ready
+**Deliverable written to `docs/cv/cv-content.md`** — full Markdown draft, ready
 for review. Contact info, education, and photo carried over unchanged from
 the current `frontend-engineer.pdf` (not in any `content/*.ts` file, so
 nothing to reconcile against the content-refresh work).
@@ -66,7 +66,7 @@ nothing to reconcile against the content-refresh work).
 ## Execution note (once grilled and closed)
 
 1. Write the approved content to a new Markdown file — suggest
-   `docs/cv-content.md` (retire `docs/cv_content_brainstorm.md`'s role as
+   `docs/cv/cv-content.md` (retire `docs/cv/cv-content-brainstorm.md`'s role as
    the "CV thinking" doc, or fold its still-relevant XYZ-format tip into
    the new file).
 2. Get that Markdown reviewed/approved before touching the PDF.

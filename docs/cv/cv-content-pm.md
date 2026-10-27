@@ -3,7 +3,7 @@
 Base content for a Technical/IT Associate PM application, built from a
 grilling session (see notes at bottom) rather than fabricated PM experience.
 Contact/education carried over as-is from the current CV content
-(`docs/cv-content.md`) — no changes there.
+(`docs/cv/cv-content.md`) — no changes there.
 
 Target: Technical/IT Project Manager, Associate/Junior level. No specific
 job posting yet — this is the general base to tailor per-posting later, same

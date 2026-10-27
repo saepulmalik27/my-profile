@@ -1,6 +1,6 @@
 # Saepul Malik — CV Content Draft
 
-Source of truth once approved: replaces `docs/cv_content_brainstorm.md`'s role
+Source of truth once approved: replaces `docs/cv/cv-content-brainstorm.md`'s role
 as the CV thinking doc. Target: 1 page. Contact/education carried over as-is
 from the current `frontend-engineer.pdf` (no content-file source for these —
 not part of the content-refresh scope).

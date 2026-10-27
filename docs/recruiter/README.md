@@ -16,5 +16,5 @@ Folder ini mengorganisir seluruh riset kebutuhan rekruter, audit feedback riil d
 
 ## Hubungan dengan Dokumen Lain di `docs/`
 
-* Konten naskah CV satu halaman yang telah diselaraskan dengan standar ini dapat dilihat di [`../cv-content.md`](../cv-content.md).
-* Variasi CV spesifik per lamaran perusahaan tersimpan di folder [`../applications/`](../applications/) dan [`../cv/`](../cv/).
+* Konten naskah CV satu halaman yang telah diselaraskan dengan standar ini dapat dilihat di [`../cv/cv-content.md`](../cv/cv-content.md).
+* Variasi CV spesifik per lamaran perusahaan tersimpan di folder [`../applications/`](../applications/).

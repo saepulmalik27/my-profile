@@ -47,7 +47,7 @@ for real 3D assets.
   this component's existing pattern/comments) or wire it to `content/profile.ts`
   — don't silently pick one without noting the tradeoff.
 - **No markdown→PDF pipeline exists in this repo.** `public/frontend-engineer.pdf`
-  is a static binary asset with no source file checked in — `docs/cv_content_brainstorm.md`
+  is a static binary asset with no source file checked in — `docs/cv/cv-content-brainstorm.md`
   is an old (Bahasa Indonesia) brainstorm doc, not a maintained CV source.
   Ticket 02 is explicit: draft the new CV content as a Markdown file first
   (this map's own deliverable), get it reviewed, and only then produce the
@@ -72,7 +72,7 @@ for real 3D assets.
 ## Decisions so far
 
 - [Update home page headline/highlight](tickets/01-home-headline-refresh.md) — H1/H3 unchanged; tagline now leads with AI-integration/reusable-systems signal instead of pure Physics framing; sit-reveal blurb broadens the highlight reel without naming specific case studies or adding a Showcase-page CTA. `name`/`role`/`tagline` now wired to `content/profile.ts` (no schema change needed); the sit-reveal blurb stays hardcoded since nothing else duplicates it.
-- [Update CV content (Markdown draft, then PDF)](tickets/02-cv-content-refresh.md) — 1-page target; 13 Inspigo case studies condensed into themed bullets (Storybook/realtime chat dropped as stale); daily-driver skills subset only; Currently Learning/Personal Projects stay web-only. Draft written to `docs/cv-content.md`, contact/education/photo carried over unchanged from the current PDF. **PDF production still not started** — per this ticket's own scope, waiting on review/approval of the Markdown draft first.
+- [Update CV content (Markdown draft, then PDF)](tickets/02-cv-content-refresh.md) — 1-page target; 13 Inspigo case studies condensed into themed bullets (Storybook/realtime chat dropped as stale); daily-driver skills subset only; Currently Learning/Personal Projects stay web-only. Draft written to `docs/cv/cv-content.md`, contact/education/photo carried over unchanged from the current PDF. **PDF production still not started** — per this ticket's own scope, waiting on review/approval of the Markdown draft first.
 
 ## Tickets
 

@@ -1,6 +1,6 @@
 import type { SkillCategory } from './types';
 
-// Grouped per ticket 09 / docs/cv_content_brainstorm.md's restructuring
+// Grouped per ticket 09 / docs/cv/cv-content-brainstorm.md's restructuring
 // suggestion — reads as more senior/intentional than a flat tag list.
 // Reconciled against actual project usage per ticket 06: dropped
 // Micro-frontend (never shipped), added a daily/used/learning proficiency

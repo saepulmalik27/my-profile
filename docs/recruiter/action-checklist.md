@@ -10,7 +10,7 @@ Berdasarkan audit recruiter pada [`portfolio-feedback.md`](./portfolio-feedback.
 
 | # | Temuan Recruiter | Solusi / Standar yang Diharapkan | Prioritas | Status |
 | :-: | :--- | :--- | :-: | :-: |
-| 1 | **Data Logistik Kurang Lengkap** (Lokasi, Timezone, Work Authorization) | Tambahkan di header CV dan section About/Contact web: `Bogor, Indonesia (UTC+7)`, open to remote & onsite. | P1 | Selesai di header CV (`docs/cv/*`, `cv-content.md`, `general-cv.md`); web About/Contact belum |
+| 1 | **Data Logistik Kurang Lengkap** (Lokasi, Timezone, Work Authorization) | Tambahkan di header CV dan section About/Contact web: `Bogor, Indonesia (UTC+7)`, open to remote & onsite. | P1 | Selesai di header CV (`docs/cv/cv-content.md`, `docs/applications/general-cv.md`, `bibit-fullstack-cv.md`, `frontend-developer-v1-cv.md`); web About/Contact belum |
 | 2 | **Ketersediaan & Notice Period Tidak Ada** | Cantumkan ketersediaan: *Notice period 1 bulan* dan preferensi kerja (remote & onsite). | P1 | Selesai di header CV; web About/Contact belum |
 | 3 | **Inkonsistensi Job Title** (*Senior Frontend Engineer* vs *Frontend Engineer*) | Selaraskan judul posisi di seluruh platform (CV, LinkedIn, Web Header, Career Cards) agar tidak menimbulkan persepsi *title inflation*. | P1 | Perlu verifikasi konsistensi |
 | 4 | **Metrik Dampak Belum Terkuantisasi** (Hanya kata kerja kualitatif: "built", "maintained") | Tambahkan angka terukur: 350+ klien enterprise, ~35.000 user, otomasi QA dari 10% sampling ke 100%, efisiensi build/release. | P1 | Diimplementasikan di `cv-content.md` |

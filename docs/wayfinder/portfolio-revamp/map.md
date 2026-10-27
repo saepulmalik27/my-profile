@@ -21,10 +21,10 @@ A complete decision roadmap for revamping `apps/portfolio` into four route-based
   - Four pages are **separate routes** (`/`, `/career`, `/skills`, `/about`) with a persistent nav, not scroll-sections on one page.
   - Portfolio content (work history, skills, bio) lives in **structured TS/JSON data files** — single source shared by the UI and the AI chatbot's system prompt (today it's hardcoded in `app/page.tsx` and duplicated in `app/api/chat/route.ts`).
   - The AI "chat with my resume" bot becomes a **persistent site-wide floating widget**, not tied to the home page's layout.
-  - Home's 3D bedroom-at-night scene sets a **new, moodier visual tone for the whole site** — Career/Skills/About get redesigned to match it. This **supersedes** the old "Bold & Colorful" bento aesthetic described in `docs/portfolio_references.md` and `docs/spec.md`.
-  - This map **supersedes** `docs/ui-pages.md`'s `apps/portfolio` page list (`/`, `/about`, `/projects`, `/projects/[slug]`, `/resume`) and the visual-direction section of `docs/portfolio_website_brainstorm.md`.
-  - This map does **not** touch or retire `apps/blog`, `apps/dashboard`, or a standalone `apps/3d-showcase` app described in `docs/development-roadmap.md` / `docs/project-overview.md` — see Out of scope.
-  - Useful source material to ground content decisions: `docs/cv_content_brainstorm.md` (achievement-based CV copy ideas), `docs/portfolio_references.md` (bento-grid visual references, though the visual direction itself is now superseded per above).
+  - Home's 3D bedroom-at-night scene sets a **new, moodier visual tone for the whole site** — Career/Skills/About get redesigned to match it. This **supersedes** the old "Bold & Colorful" bento aesthetic described in `docs/portfolio/references.md` and `docs/portfolio/spec.md`.
+  - This map **supersedes** `docs/portfolio/ui-pages.md`'s `apps/portfolio` page list (`/`, `/about`, `/projects`, `/projects/[slug]`, `/resume`) and the visual-direction section of `docs/portfolio/website-brainstorm.md`.
+  - This map does **not** touch or retire `apps/blog`, `apps/dashboard`, or a standalone `apps/3d-showcase` app described in `docs/portfolio/development-roadmap.md` / `docs/portfolio/project-overview.md` — see Out of scope.
+  - Useful source material to ground content decisions: `docs/cv/cv-content-brainstorm.md` (achievement-based CV copy ideas), `docs/portfolio/references.md` (bento-grid visual references, though the visual direction itself is now superseded per above).
 
 ## Decisions so far
 
@@ -47,10 +47,10 @@ A complete decision roadmap for revamping `apps/portfolio` into four route-based
 
 Everything below is implementation-phase work, not a further decision this map needs to make — nothing here blocks starting to build.
 
-- **Final page copy/content authoring** (CV bullets, project case-study narratives, about bio prose) — the structure and facts are locked (tickets 08, 09, 10, 11); writing the actual final sentences into `apps/portfolio/content/*.ts` and the MDX case studies is execution, informed by `docs/cv_content_brainstorm.md`.
+- **Final page copy/content authoring** (CV bullets, project case-study narratives, about bio prose) — the structure and facts are locked (tickets 08, 09, 10, 11); writing the actual final sentences into `apps/portfolio/content/*.ts` and the MDX case studies is execution, informed by `docs/cv/cv-content-brainstorm.md`.
 - **SEO/analytics specifics** beyond the base accessibility/SEO fallback (ticket 04) — OG image asset, sitemap, structured data. Small enough to decide inline during implementation.
 - **Deployment/hosting configuration** for the revamped site (env vars, preview deploys) — unaffected by anything decided in this map; can be handled whenever, independent of the build order.
 
 ## Out of scope
 
-- `apps/blog`, `apps/dashboard`, and a standalone `apps/3d-showcase` app, plus the Vercel-subdomain deployment topology, as described in `docs/development-roadmap.md` and `docs/project-overview.md` — this map is scoped to `apps/portfolio` only; those ideas are left alone, neither advanced nor retired.
+- `apps/blog`, `apps/dashboard`, and a standalone `apps/3d-showcase` app, plus the Vercel-subdomain deployment topology, as described in `docs/portfolio/development-roadmap.md` and `docs/portfolio/project-overview.md` — this map is scoped to `apps/portfolio` only; those ideas are left alone, neither advanced nor retired.

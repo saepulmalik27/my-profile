@@ -449,7 +449,8 @@ Saat recruiter merekomendasikan kandidat ke hiring manager, mereka menulis **Can
 
 ## 9. Status CV yang sudah ada (per 27 Oktober 2026)
 
-Sudah diperbaiki di `docs/cv/*`, `docs/cv-content.md`, dan `docs/applications/general-cv.md`:
+Sudah diperbaiki di `docs/cv/cv-content.md`, `docs/applications/general-cv.md`,
+`docs/applications/bibit-fullstack-cv.md`, dan `docs/applications/frontend-developer-v1-cv.md`:
 
 - Nomor HP tunggal: **+62 895-2733-4546**.
 - Pengalaman ditulis eksplisit: **8 tahun software engineering, 5 tahun terakhir fokus frontend**
@@ -459,7 +460,7 @@ Sudah diperbaiki di `docs/cv/*`, `docs/cv-content.md`, dan `docs/applications/ge
 
 Masih terbuka:
 
-1. **CV dev belum memakai angka dampak**: bullet di `frontend-developer-v1.md` dan `bibit-id.md`
+1. **CV dev belum memakai angka dampak**: bullet di `frontend-developer-v1-cv.md` dan `bibit-fullstack-cv.md`
    masih kualitatif. Angka nyata (~350 klien enterprise, ~35.000 pengguna) bisa dipakai ulang bila relevan.
 2. **Tanggal hanya tahun** (2021 – Present). Format bulan-tahun membantu parser menghitung durasi. [OPINI, Sedang]
 3. Beberapa CV per lamaran di `docs/applications/` masih menulis "4+ years" fokus React; untuk lamaran

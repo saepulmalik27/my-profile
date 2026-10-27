@@ -38,4 +38,4 @@ Link the resulting reference/prototype as the ticket's answer.
 
 **Hero text compositing:** headline text "boots" in monospace (terminal-style, echoing the monitor's glow) then settles into the Fraunces display face — an overlay-to-refined-identity transition, not raw in-scene 3D text or a static overlay.
 
-**Site-wide extension (feeds ticket 06):** Ink Navy stays the base background on every page, not just home. Amber = primary accent for "human" content (About, contact, CTAs). Cyan = secondary accent for "technical" content (Skills, code, the chat widget). This replaces the old Bold & Colorful bento palette in `docs/portfolio_references.md` everywhere, not just on the 3D scene.
+**Site-wide extension (feeds ticket 06):** Ink Navy stays the base background on every page, not just home. Amber = primary accent for "human" content (About, contact, CTAs). Cyan = secondary accent for "technical" content (Skills, code, the chat widget). This replaces the old Bold & Colorful bento palette in `docs/portfolio/references.md` everywhere, not just on the 3D scene.
